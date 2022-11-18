@@ -4,1150 +4,1001 @@
     Author     : RANIA
 --%>
 
+<%
+    if (session.getAttribute("name")==null){
+        response.sendRedirect("Template/pages/samples/login.html");
+    }
+    
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <html lang="en">
 
     <head>
+        <!-- Required meta tags -->
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- theme meta -->
-        <meta name="theme-name" content="focus"/>
-        <title>Focus Admin: Creative Admin Dashboard</title>
-        <!-- ================= Favicon ================== -->
-        <!-- Standard -->
-        <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
-        <!-- Retina iPad Touch Icon-->
-   
-    <link rel="apple-touch-icon" sizes="144x144" href="http://placehold.it/144.png/000/fff">
-    <!-- Retina iPhone Touch Icon-->
-    <link rel="apple-touch-icon" sizes="114x114" href="http://placehold.it/114.png/000/fff">
-    <!-- Standard iPad Touch Icon-->
-    <link rel="apple-touch-icon" sizes="72x72" href="http://placehold.it/72.png/000/fff">
-    <!-- Standard iPhone Touch Icon-->
-    <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">
-    <!-- Styles -->
-    <link href="Template/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
-    <link href="Template/css/lib/chartist/chartist.min.css" rel="stylesheet">
-    <link href="Template/css/lib/font-awesome.min.css" rel="stylesheet">
-    <link href="Template/css/lib/themify-icons.css" rel="stylesheet">
-    <link href="Template/css/lib/owl.carousel.min.css" rel="stylesheet" />
-    <link href="Template/css/lib/owl.theme.default.min.css" rel="stylesheet" />
-    <link href="Template/css/lib/weather-icons.css" rel="stylesheet" />
-    <link href="Template/css/lib/menubar/sidebar.css" rel="stylesheet">
-    <link href="Template/css/lib/bootstrap.min.css" rel="stylesheet">
-    <link href="Template/css/lib/helper.css" rel="stylesheet">
-    <link href="Template/css/style.css" rel="stylesheet">
-</head>
-
-<body>
-   
-    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
-        <div class="nano">
-            <div class="nano-content">
-                <ul>
-                    <div class="logo"><a href="Template/index.html">
-                            <!-- <img src="images/logo.png" alt="" /> --><span>Focus</span></a></div>
-                    <li class="label">Main</li>
-                    <li><a class="sidebar-sub-toggle"><i class="ti-home"></i> Dashboard <span
-                                class="badge badge-primary">2</span> <span
-                                class="sidebar-collapse-icon ti-angle-down"></span></a>
-                        
-                    </li>
-
-                    <li class="label">Apps</li>
-                    <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> Charts <span
-                                class="sidebar-collapse-icon ti-angle-down"></span></a>
-                        <ul>
-                            <li><a href="Template/chart-flot.html">Flot</a></li>
-                            <li><a href="Template/chart-morris.html">Morris</a></li>
-                            <li><a href="Template/chartjs.html">Chartjs</a></li>
-                            <li><a href="Template/chartist.html">Chartist</a></li>
-                            <li><a href="Template/chart-peity.html">Peity</a></li>
-                            <li><a href="Template/chart-sparkline.html">Sparkle</a></li>
-                            <li><a href="Template/chart-knob.html">Knob</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="Template/app-event-calender.html"><i class="ti-calendar"></i> Calender </a></li>
-                    <li><a href="Template/app-email.html"><i class="ti-email"></i> Email</a></li>
-                    <li><a href="Template/app-profile.html"><i class="ti-user"></i> Profile</a></li>
-                    <li><a href="Template/app-widget-card.html"><i class="ti-layout-grid2-alt"></i> Widget</a></li>
-                    <li class="label">Features</li>
-                    <li><a class="sidebar-sub-toggle"><i class="ti-layout"></i> UI Elements <span
-                                class="sidebar-collapse-icon ti-angle-down"></span></a>
-                        <ul>
-                            <li><a href="Template/ui-typography.html">Typography</a></li>
-                            <li><a href="Template/ui-alerts.html">Alerts</a></li>
-
-                            <li><a href="Template/ui-button.html">Button</a></li>
-                            <li><a href="Template/ui-dropdown.html">Dropdown</a></li>
-
-                            <li><a href="Template/ui-list-group.html">List Group</a></li>
-
-                            <li><a href="Template/ui-progressbar.html">Progressbar</a></li>
-                            <li><a href="Template/ui-tab.html">Tab</a></li>
-
-                        </ul>
-                    </li>
-                    <li><a class="sidebar-sub-toggle"><i class="ti-panel"></i> Components <span
-                                class="sidebar-collapse-icon ti-angle-down"></span></a>
-                        <ul>
-                            <li><a href="Template/uc-calendar.html">Calendar</a></li>
-                            <li><a href="Template/uc-carousel.html">Carousel</a></li>
-                            <li><a href="Template/uc-weather.html">Weather</a></li>
-                            <li><a href="Template/uc-datamap.html">Datamap</a></li>
-                            <li><a href="Template/uc-todo-list.html">To do</a></li>
-                            <li><a href="Template/uc-scrollable.html">Scrollable</a></li>
-                            <li><a href="Template/uc-sweetalert.html">Sweet Alert</a></li>
-                            <li><a href="Template/uc-toastr.html">Toastr</a></li>
-                            <li><a href="Template/uc-range-slider-basic.html">Basic Range Slider</a></li>
-                            <li><a href="Template/uc-range-slider-advance.html">Advance Range Slider</a></li>
-                            <li><a href="Template/uc-nestable.html">Nestable</a></li>
-
-                            <li><a href="Template/uc-rating-bar-rating.html">Bar Rating</a></li>
-                            <li><a href="Template/uc-rating-jRate.html">jRate</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid4-alt"></i> Table <span
-                                class="sidebar-collapse-icon ti-angle-down"></span></a>
-                        <ul>
-                            <li><a href="Template/table-basic.html">Basic</a></li>
-
-                            <li><a href="Template/table-export.html">Datatable Export</a></li>
-                            <li><a href="Template/table-row-select.html">Datatable Row Select</a></li>
-                            <li><a href="Template/table-jsgrid.html">Editable </a></li>
-                        </ul>
-                    </li>
-                    <li><a class="sidebar-sub-toggle"><i class="ti-heart"></i> Icons <span
-                                class="sidebar-collapse-icon ti-angle-down"></span></a>
-                        <ul>
-                            <li><a href="Template/font-themify.html">Themify</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="sidebar-sub-toggle"><i class="ti-map"></i> Maps <span
-                                class="sidebar-collapse-icon ti-angle-down"></span></a>
-                        <ul>
-                            <li><a href="Template/gmaps.html">Basic</a></li>
-                            <li><a href="Template/vector-map.html">Vector Map</a></li>
-                        </ul>
-                    </li>
-                    <li class="label">Form</li>
-                    <li><a href="Template/form-basic.html"><i class="ti-view-list-alt"></i> Basic Form </a></li>
-                    <li class="label">Extra</li>
-                    <li><a class="sidebar-sub-toggle"><i class="ti-files"></i> Invoice <span
-                                class="sidebar-collapse-icon ti-angle-down"></span></a>
-                        <ul>
-                            <li><a href="Template/invoice.html">Basic</a></li>
-                            <li><a href="Template/invoice-editable.html">Editable</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="sidebar-sub-toggle"><i class="ti-target"></i> Pages <span
-                                class="sidebar-collapse-icon ti-angle-down"></span></a>
-                        <ul>
-                            <li><a href="Template/page-login.html">Login</a></li>
-                            <li><a href="Template/page-register.html">Register</a></li>
-                            <li><a href="Template/page-reset-password.html">Forgot password</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="Template/../documentation/index.html"><i class="ti-file"></i> Documentation</a></li>
-                    <li><a><i class="ti-close"></i> Logout</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- /# sidebar -->
-
-    <div class="header">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="float-left">
-                        <div class="hamburger sidebar-toggle">
-                            <span class="line"></span>
-                            <span class="line"></span>
-                            <span class="line"></span>
-                        </div>
-                    </div>
-                    <div class="float-right">
-                        <div class="dropdown dib">
-                            <div class="header-icon" data-toggle="dropdown">
-                                <i class="ti-bell"></i>
-                                <div class="drop-down dropdown-menu dropdown-menu-right">
-                                    <div class="dropdown-content-heading">
-                                        <span class="text-left">Recent Notifications</span>
-                                    </div>
-                                    <div class="dropdown-content-body">
-                                        <ul>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                         src="Template/images/avatar/3.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Mr. John</div>
-                                                        <div class="notification-text">5 members joined today </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                         src="Template/images/avatar/3.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Mariam</div>
-                                                        <div class="notification-text">likes a photo of you</div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                         src="Template/images/avatar/3.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Tasnim</div>
-                                                        <div class="notification-text">Hi Teddy, Just wanted to let you
-                                                            ...</div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                         src="Template/images/avatar/3.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Mr. John</div>
-                                                        <div class="notification-text">Hi Teddy, Just wanted to let you
-                                                            ...</div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li class="text-center">
-                                                <a href="#" class="more-link">See All</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="dropdown dib">
-                            <div class="header-icon" data-toggle="dropdown">
-                                <i class="ti-email"></i>
-                                <div class="drop-down dropdown-menu dropdown-menu-right">
-                                    <div class="dropdown-content-heading">
-                                        <span class="text-left">2 New Messages</span>
-                                        <a href="Template/email.html">
-                                            <i class="ti-pencil-alt pull-right"></i>
-                                        </a>
-                                    </div>
-                                    <div class="dropdown-content-body">
-                                        <ul>
-                                            <li class="notification-unread">
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                         src="Template/images/avatar/1.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Michael Qin</div>
-                                                        <div class="notification-text">Hi Teddy, Just wanted to let you
-                                                            ...</div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li class="notification-unread">
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                         src="Template/images/avatar/2.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Mr. John</div>
-                                                        <div class="notification-text">Hi Teddy, Just wanted to let you
-                                                            ...</div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                         src="Template/images/avatar/3.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Michael Qin</div>
-                                                        <div class="notification-text">Hi Teddy, Just wanted to let you
-                                                            ...</div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                         src="Template/images/avatar/2.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Mr. John</div>
-                                                        <div class="notification-text">Hi Teddy, Just wanted to let you
-                                                            ...</div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li class="text-center">
-                                                <a href="#" class="more-link">See All</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="dropdown dib">
-                            <div class="header-icon" data-toggle="dropdown">
-                                <span class="user-avatar">John
-                                    <i class="ti-angle-down f-s-10"></i>
-                                </span>
-                                <div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
-                                    <div class="dropdown-content-heading">
-                                        <span class="text-left">Upgrade Now</span>
-                                        <p class="trial-day">30 Days Trail</p>
-                                    </div>
-                                    <div class="dropdown-content-body">
-                                        <ul>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="ti-user"></i>
-                                                    <span>Profile</span>
-                                                </a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#">
-                                                    <i class="ti-email"></i>
-                                                    <span>Inbox</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="ti-settings"></i>
-                                                    <span>Setting</span>
-                                                </a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#">
-                                                    <i class="ti-lock"></i>
-                                                    <span>Lock Screen</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="Template/page-login.html">
-                                                    <i class="ti-power-off"></i>
-                                                    <span>Logout</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Skydash Admin</title>
+        <!-- plugins:css -->
+        <link rel="stylesheet" href="Template/vendors/feather/feather.css">
+        <link rel="stylesheet" href="Template/vendors/ti-icons/css/themify-icons.css">
+        <link rel="stylesheet" href="Template/vendors/css/vendor.bundle.base.css">
+        <!-- endinject -->
+        <!-- Plugin css for this page -->
+        <link rel="stylesheet" href="Template/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+        <link rel="stylesheet" href="Template/vendors/ti-icons/css/themify-icons.css">
+        <link rel="stylesheet" type="text/css" href="Template/js/select.dataTables.min.css">
+        <!-- End plugin css for this page -->
+        <!-- inject:css -->
+        <link rel="stylesheet" href="Template/css/vertical-layout-light/style.css">
+        <!-- endinject -->
+        <link rel="shortcut icon" href="Template/images/favicon.png" />
+    </head>
+    <body>
+        <div class="container-scroller">
+            <!-- partial:partials/_navbar.html -->
+            <%@include file="header.jsp"%>
+            <!-- partial -->
+            <div class="container-fluid page-body-wrapper">
+                <!-- partial:partials/_settings-panel.html -->
+                <div class="theme-setting-wrapper">
+                    <div id="settings-trigger"><i class="ti-settings"></i></div>
+                    <div id="theme-settings" class="settings-panel">
+                        <i class="settings-close ti-close"></i>
+                        <p class="settings-heading">SIDEBAR SKINS</p>
+                        <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border mr-3"></div>Light</div>
+                        <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark</div>
+                        <p class="settings-heading mt-2">HEADER SKINS</p>
+                        <div class="color-tiles mx-0 px-4">
+                            <div class="tiles success"></div>
+                            <div class="tiles warning"></div>
+                            <div class="tiles danger"></div>
+                            <div class="tiles info"></div>
+                            <div class="tiles dark"></div>
+                            <div class="tiles default"></div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="content-wrap">
-        <div class="main">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-8 p-r-0 title-margin-right">
-                        <div class="page-header">
-                            <div class="page-title">
-                                <h1>Hello, <span>Welcome Here</span></h1>
+                <div id="right-sidebar" class="settings-panel">
+                    <i class="settings-close ti-close"></i>
+                    <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="todo-tab" data-toggle="tab" href="#todo-section" role="tab" aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="chats-tab" data-toggle="tab" href="#chats-section" role="tab" aria-controls="chats-section">CHATS</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="setting-content">
+                        <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
+                            <div class="add-items d-flex px-3 mb-0">
+                                <form class="form w-100">
+                                    <div class="form-group d-flex">
+                                        <input type="text" class="form-control todo-list-input" placeholder="Add To-do">
+                                        <button type="submit" class="add btn btn-primary todo-list-add-btn" id="add-task">Add</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="list-wrapper px-3">
+                                <ul class="d-flex flex-column-reverse todo-list">
+                                    <li>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input class="checkbox" type="checkbox">
+                                                Team review meeting at 3.00 PM
+                                            </label>
+                                        </div>
+                                        <i class="remove ti-close"></i>
+                                    </li>
+                                    <li>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input class="checkbox" type="checkbox">
+                                                Prepare for presentation
+                                            </label>
+                                        </div>
+                                        <i class="remove ti-close"></i>
+                                    </li>
+                                    <li>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input class="checkbox" type="checkbox">
+                                                Resolve all the low priority tickets due today
+                                            </label>
+                                        </div>
+                                        <i class="remove ti-close"></i>
+                                    </li>
+                                    <li class="completed">
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input class="checkbox" type="checkbox" checked>
+                                                Schedule meeting for next week
+                                            </label>
+                                        </div>
+                                        <i class="remove ti-close"></i>
+                                    </li>
+                                    <li class="completed">
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input class="checkbox" type="checkbox" checked>
+                                                Project review
+                                            </label>
+                                        </div>
+                                        <i class="remove ti-close"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                            <h4 class="px-3 text-muted mt-5 font-weight-light mb-0">Events</h4>
+                            <div class="events pt-4 px-3">
+                                <div class="wrapper d-flex mb-2">
+                                    <i class="ti-control-record text-primary mr-2"></i>
+                                    <span>Feb 11 2018</span>
+                                </div>
+                                <p class="mb-0 font-weight-thin text-gray">Creating component page build a js</p>
+                                <p class="text-gray mb-0">The total number of sessions</p>
+                            </div>
+                            <div class="events pt-4 px-3">
+                                <div class="wrapper d-flex mb-2">
+                                    <i class="ti-control-record text-primary mr-2"></i>
+                                    <span>Feb 7 2018</span>
+                                </div>
+                                <p class="mb-0 font-weight-thin text-gray">Meeting with Alisa</p>
+                                <p class="text-gray mb-0 ">Call Sarah Graves</p>
                             </div>
                         </div>
-                    </div>
-                    <!-- /# column -->
-                    <div class="col-lg-4 p-l-0 title-margin-left">
-                        <div class="page-header">
-                            <div class="page-title">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                                    <li class="breadcrumb-item active">Home</li>
-                                </ol>
+                        <!-- To do section tab ends -->
+                        <div class="tab-pane fade" id="chats-section" role="tabpanel" aria-labelledby="chats-section">
+                            <div class="d-flex align-items-center justify-content-between border-bottom">
+                                <p class="settings-heading border-top-0 mb-3 pl-3 pt-0 border-bottom-0 pb-0">Friends</p>
+                                <small class="settings-heading border-top-0 mb-3 pt-0 border-bottom-0 pb-0 pr-3 font-weight-normal">See All</small>
                             </div>
+                            <ul class="chat-list">
+                                <li class="list active">
+                                    <div class="profile"><img src="Template/images/faces/face1.jpg" alt="image"><span class="online"></span></div>
+                                    <div class="info">
+                                        <p>Thomas Douglas</p>
+                                        <p>Available</p>
+                                    </div>
+                                    <small class="text-muted my-auto">19 min</small>
+                                </li>
+                                <li class="list">
+                                    <div class="profile"><img src="Template/images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
+                                    <div class="info">
+                                        <div class="wrapper d-flex">
+                                            <p>Catherine</p>
+                                        </div>
+                                        <p>Away</p>
+                                    </div>
+                                    <div class="badge badge-success badge-pill my-auto mx-2">4</div>
+                                    <small class="text-muted my-auto">23 min</small>
+                                </li>
+                                <li class="list">
+                                    <div class="profile"><img src="Template/images/faces/face3.jpg" alt="image"><span class="online"></span></div>
+                                    <div class="info">
+                                        <p>Daniel Russell</p>
+                                        <p>Available</p>
+                                    </div>
+                                    <small class="text-muted my-auto">14 min</small>
+                                </li>
+                                <li class="list">
+                                    <div class="profile"><img src="Template/images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
+                                    <div class="info">
+                                        <p>James Richardson</p>
+                                        <p>Away</p>
+                                    </div>
+                                    <small class="text-muted my-auto">2 min</small>
+                                </li>
+                                <li class="list">
+                                    <div class="profile"><img src="Template/images/faces/face5.jpg" alt="image"><span class="online"></span></div>
+                                    <div class="info">
+                                        <p>Madeline Kennedy</p>
+                                        <p>Available</p>
+                                    </div>
+                                    <small class="text-muted my-auto">5 min</small>
+                                </li>
+                                <li class="list">
+                                    <div class="profile"><img src="Template/images/faces/face6.jpg" alt="image"><span class="online"></span></div>
+                                    <div class="info">
+                                        <p>Sarah Graves</p>
+                                        <p>Available</p>
+                                    </div>
+                                    <small class="text-muted my-auto">47 min</small>
+                                </li>
+                            </ul>
                         </div>
+                        <!-- chat tab ends -->
                     </div>
-                    <!-- /# column -->
                 </div>
-                <!-- /# row -->
-                <section id="main-content">
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-money color-success border-success"></i>
-                                    </div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">Total Profit</div>
-                                        <div class="stat-digit">1,012</div>
-                                    </div>
-                                </div>
+                <!-- partial -->
+                <!-- partial:partials/_sidebar.html -->
+                <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.jsp">
+                                <i class="icon-grid menu-icon"></i>
+                                <span class="menu-title">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                                <i class="icon-layout menu-icon"></i>
+                                <span class="menu-title">UI Elements</span>
+                                <i class="menu-arrow"></i>
+                            </a>
+                            <div class="collapse" id="ui-basic">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item"> <a class="nav-link" href="Template/pages/ui-features/buttons.html">Buttons</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="Template/pages/ui-features/dropdowns.html">Dropdowns</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="Template/pages/ui-features/typography.html">Typography</a></li>
+                                </ul>
                             </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-user color-primary border-primary"></i>
-                                    </div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">New Customer</div>
-                                        <div class="stat-digit">961</div>
-                                    </div>
-                                </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+                                <i class="icon-columns menu-icon"></i>
+                                <span class="menu-title">Form elements</span>
+                                <i class="menu-arrow"></i>
+                            </a>
+                            <div class="collapse" id="form-elements">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item"><a class="nav-link" href="Template/pages/forms/basic_elements.html">Basic Elements</a></li>
+                                </ul>
                             </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-layout-grid2 color-pink border-pink"></i>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+                                <i class="icon-bar-graph menu-icon"></i>
+                                <span class="menu-title">Charts</span>
+                                <i class="menu-arrow"></i>
+                            </a>
+                            <div class="collapse" id="charts">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item"> <a class="nav-link" href="Template/pages/charts/chartjs.html">ChartJs</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+                                <i class="icon-grid-2 menu-icon"></i>
+                                <span class="menu-title">Tables</span>
+                                <i class="menu-arrow"></i>
+                            </a>
+                            <div class="collapse" id="tables">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item"> <a class="nav-link" href="Template/pages/tables/basic-table.html">Basic table</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
+                                <i class="icon-contract menu-icon"></i>
+                                <span class="menu-title">Icons</span>
+                                <i class="menu-arrow"></i>
+                            </a>
+                            <div class="collapse" id="icons">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item"> <a class="nav-link" href="Template/pages/icons/mdi.html">Mdi icons</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+                                <i class="icon-head menu-icon"></i>
+                                <span class="menu-title">User Pages</span>
+                                <i class="menu-arrow"></i>
+                            </a>
+                            <div class="collapse" id="auth">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item"> <a class="nav-link" href="Template/pages/samples/login.html"> Login </a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="Template/pages/samples/register.html"> Register </a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
+                                <i class="icon-ban menu-icon"></i>
+                                <span class="menu-title">Error pages</span>
+                                <i class="menu-arrow"></i>
+                            </a>
+                            <div class="collapse" id="error">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item"> <a class="nav-link" href="Template/pages/samples/error-404.html"> 404 </a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="Template/pages/samples/error-500.html"> 500 </a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Template/pages/documentation/documentation.html">
+                                <i class="icon-paper menu-icon"></i>
+                                <span class="menu-title">Documentation</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- partial -->
+                <div class="main-panel">
+                    <div class="content-wrapper">
+                        <div class="row">
+                            <div class="col-md-12 grid-margin">
+                                <div class="row">
+                                    <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                                        <h3 class="font-weight-bold">Welcome Aamir</h3>
+                                        <h6 class="font-weight-normal mb-0">All systems are running smoothly! You have <span class="text-primary">3 unread alerts!</span></h6>
                                     </div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">Active Projects</div>
-                                        <div class="stat-digit">770</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-link color-danger border-danger"></i></div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">Referral</div>
-                                        <div class="stat-digit">2,781</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <div class="card">
-                                <div class="card-title">
-                                    <h4>Fee Collections and Expenses</h4>
-
-                                </div>
-                                <div class="card-body">
-                                    <div class="ct-bar-chart m-t-30"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4">
-                            <div class="card">
-
-                                <div class="card-body">
-                                    <div class="ct-pie-chart"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="card bg-primary">
-                                        <div class="weather-widget">
-                                            <div id="weather-one" class="weather-one p-22"></div>
+                                    <div class="col-12 col-xl-4">
+                                        <div class="justify-content-end d-flex">
+                                            <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
+                                                <button class="btn btn-sm btn-light bg-white dropdown-toggle" type="button" id="dropdownMenuDate2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                    <i class="mdi mdi-calendar"></i> Today (10 Jan 2021)
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuDate2">
+                                                    <a class="dropdown-item" href="#">January - March</a>
+                                                    <a class="dropdown-item" href="#">March - June</a>
+                                                    <a class="dropdown-item" href="#">June - August</a>
+                                                    <a class="dropdown-item" href="#">August - November</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-12">
-                                    <div class="card">
-                                        <div class="testimonial-widget-one p-17">
-                                            <div class="testimonial-widget-one owl-carousel owl-theme">
-                                                <div class="item">
-                                                    <div class="testimonial-content">
-                                                        <div class="testimonial-text">
-                                                            <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet,
-                                                            consectetur adipisicing elit, sed do eiusmod tempor
-                                                            incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                                            minim veniam, quis
-                                                            nostrud exercitation <i class="fa fa-quote-right"></i>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 grid-margin stretch-card">
+                                <div class="card tale-bg">
+                                    <div class="card-people mt-auto">
+                                        <img src="Template/images/dashboard/people.svg" alt="people">
+                                        <div class="weather-info">
+                                            <div class="d-flex">
+                                                <div>
+                                                    <h2 class="mb-0 font-weight-normal"><i class="icon-sun mr-2"></i>31<sup>C</sup></h2>
+                                                </div>
+                                                <div class="ml-2">
+                                                    <h4 class="location font-weight-normal">Bangalore</h4>
+                                                    <h6 class="font-weight-normal">India</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 grid-margin transparent">
+                                <div class="row">
+                                    <div class="col-md-6 mb-4 stretch-card transparent">
+                                        <div class="card card-tale">
+                                            <div class="card-body">
+                                                <p class="mb-4">Today’s Bookings</p>
+                                                <p class="fs-30 mb-2">4006</p>
+                                                <p>10.00% (30 days)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4 stretch-card transparent">
+                                        <div class="card card-dark-blue">
+                                            <div class="card-body">
+                                                <p class="mb-4">Total Bookings</p>
+                                                <p class="fs-30 mb-2">61344</p>
+                                                <p>22.00% (30 days)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
+                                        <div class="card card-light-blue">
+                                            <div class="card-body">
+                                                <p class="mb-4">Number of Meetings</p>
+                                                <p class="fs-30 mb-2">34040</p>
+                                                <p>2.00% (30 days)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 stretch-card transparent">
+                                        <div class="card card-light-danger">
+                                            <div class="card-body">
+                                                <p class="mb-4">Number of Clients</p>
+                                                <p class="fs-30 mb-2">47033</p>
+                                                <p>0.22% (30 days)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 grid-margin stretch-card">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <p class="card-title">Order Details</p>
+                                        <p class="font-weight-500">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
+                                        <div class="d-flex flex-wrap mb-5">
+                                            <div class="mr-5 mt-3">
+                                                <p class="text-muted">Order value</p>
+                                                <h3 class="text-primary fs-30 font-weight-medium">12.3k</h3>
+                                            </div>
+                                            <div class="mr-5 mt-3">
+                                                <p class="text-muted">Orders</p>
+                                                <h3 class="text-primary fs-30 font-weight-medium">14k</h3>
+                                            </div>
+                                            <div class="mr-5 mt-3">
+                                                <p class="text-muted">Users</p>
+                                                <h3 class="text-primary fs-30 font-weight-medium">71.56%</h3>
+                                            </div>
+                                            <div class="mt-3">
+                                                <p class="text-muted">Downloads</p>
+                                                <h3 class="text-primary fs-30 font-weight-medium">34040</h3>
+                                            </div> 
+                                        </div>
+                                        <canvas id="order-chart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 grid-margin stretch-card">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                            <p class="card-title">Sales Report</p>
+                                            <a href="#" class="text-info">View all</a>
+                                        </div>
+                                        <p class="font-weight-500">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
+                                        <div id="sales-legend" class="chartjs-legend mt-4 mb-2"></div>
+                                        <canvas id="sales-chart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 grid-margin stretch-card">
+                                <div class="card position-relative">
+                                    <div class="card-body">
+                                        <div id="detailedReports" class="carousel slide detailed-report-carousel position-static pt-2" data-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-xl-3 d-flex flex-column justify-content-start">
+                                                            <div class="ml-xl-4 mt-3">
+                                                                <p class="card-title">Detailed Reports</p>
+                                                                <h1 class="text-primary">$34040</h1>
+                                                                <h3 class="font-weight-500 mb-xl-4 text-primary">North America</h3>
+                                                                <p class="mb-2 mb-xl-0">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
+                                                            </div>  
                                                         </div>
-                                                        <img class="testimonial-author-img"
-                                                             src="Template/images/avatar/1.jpg" alt="" />
-                                                        <div class="testimonial-author">TYRION LANNISTER</div>
-                                                        <div class="testimonial-author-position">Founder-Ceo. Dell Corp
+                                                        <div class="col-md-12 col-xl-9">
+                                                            <div class="row">
+                                                                <div class="col-md-6 border-right">
+                                                                    <div class="table-responsive mb-3 mb-md-0 mt-3">
+                                                                        <table class="table table-borderless report-table">
+                                                                            <tr>
+                                                                                <td class="text-muted">Illinois</td>
+                                                                                <td class="w-100 px-0">
+                                                                                    <div class="progress progress-md mx-4">
+                                                                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td><h5 class="font-weight-bold mb-0">713</h5></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="text-muted">Washington</td>
+                                                                                <td class="w-100 px-0">
+                                                                                    <div class="progress progress-md mx-4">
+                                                                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td><h5 class="font-weight-bold mb-0">583</h5></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="text-muted">Mississippi</td>
+                                                                                <td class="w-100 px-0">
+                                                                                    <div class="progress progress-md mx-4">
+                                                                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td><h5 class="font-weight-bold mb-0">924</h5></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="text-muted">California</td>
+                                                                                <td class="w-100 px-0">
+                                                                                    <div class="progress progress-md mx-4">
+                                                                                        <div class="progress-bar bg-info" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td><h5 class="font-weight-bold mb-0">664</h5></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="text-muted">Maryland</td>
+                                                                                <td class="w-100 px-0">
+                                                                                    <div class="progress progress-md mx-4">
+                                                                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td><h5 class="font-weight-bold mb-0">560</h5></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="text-muted">Alaska</td>
+                                                                                <td class="w-100 px-0">
+                                                                                    <div class="progress progress-md mx-4">
+                                                                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td><h5 class="font-weight-bold mb-0">793</h5></td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 mt-3">
+                                                                    <canvas id="north-america-chart"></canvas>
+                                                                    <div id="north-america-legend"></div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="item">
-                                                    <div class="testimonial-content">
-                                                        <div class="testimonial-text">
-                                                            <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet,
-                                                            consectetur adipisicing elit, sed do eiusmod tempor
-                                                            incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                                            minim veniam, quis
-                                                            nostrud exercitation <i class="fa fa-quote-right"></i>
+                                                <div class="carousel-item">
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-xl-3 d-flex flex-column justify-content-start">
+                                                            <div class="ml-xl-4 mt-3">
+                                                                <p class="card-title">Detailed Reports</p>
+                                                                <h1 class="text-primary">$34040</h1>
+                                                                <h3 class="font-weight-500 mb-xl-4 text-primary">North America</h3>
+                                                                <p class="mb-2 mb-xl-0">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
+                                                            </div>  
                                                         </div>
-                                                        <img class="testimonial-author-img"
-                                                             src="Template/images/avatar/1.jpg" alt="" />
-                                                        <div class="testimonial-author">TYRION LANNISTER</div>
-                                                        <div class="testimonial-author-position">Founder-Ceo. Dell Corp
+                                                        <div class="col-md-12 col-xl-9">
+                                                            <div class="row">
+                                                                <div class="col-md-6 border-right">
+                                                                    <div class="table-responsive mb-3 mb-md-0 mt-3">
+                                                                        <table class="table table-borderless report-table">
+                                                                            <tr>
+                                                                                <td class="text-muted">Illinois</td>
+                                                                                <td class="w-100 px-0">
+                                                                                    <div class="progress progress-md mx-4">
+                                                                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td><h5 class="font-weight-bold mb-0">713</h5></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="text-muted">Washington</td>
+                                                                                <td class="w-100 px-0">
+                                                                                    <div class="progress progress-md mx-4">
+                                                                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td><h5 class="font-weight-bold mb-0">583</h5></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="text-muted">Mississippi</td>
+                                                                                <td class="w-100 px-0">
+                                                                                    <div class="progress progress-md mx-4">
+                                                                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td><h5 class="font-weight-bold mb-0">924</h5></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="text-muted">California</td>
+                                                                                <td class="w-100 px-0">
+                                                                                    <div class="progress progress-md mx-4">
+                                                                                        <div class="progress-bar bg-info" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td><h5 class="font-weight-bold mb-0">664</h5></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="text-muted">Maryland</td>
+                                                                                <td class="w-100 px-0">
+                                                                                    <div class="progress progress-md mx-4">
+                                                                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td><h5 class="font-weight-bold mb-0">560</h5></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="text-muted">Alaska</td>
+                                                                                <td class="w-100 px-0">
+                                                                                    <div class="progress progress-md mx-4">
+                                                                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td><h5 class="font-weight-bold mb-0">793</h5></td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 mt-3">
+                                                                    <canvas id="south-america-chart"></canvas>
+                                                                    <div id="south-america-legend"></div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="item">
-                                                    <div class="testimonial-content">
-                                                        <div class="testimonial-text">
-                                                            <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet,
-                                                            consectetur adipisicing elit, sed do eiusmod tempor
-                                                            incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                                            minim veniam, quis
-                                                            nostrud exercitation <i class="fa fa-quote-right"></i>
-                                                        </div>
-                                                        <img class="testimonial-author-img"
-                                                             src="Template/images/avatar/1.jpg" alt="" />
-                                                        <div class="testimonial-author">TYRION LANNISTER</div>
-                                                        <div class="testimonial-author-position">Founder-Ceo. Dell Corp
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="testimonial-content">
-                                                        <div class="testimonial-text">
-                                                            <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet,
-                                                            consectetur adipisicing elit, sed do eiusmod tempor
-                                                            incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                                            minim veniam, quis
-                                                            nostrud exercitation <i class="fa fa-quote-right"></i>
-                                                        </div>
-                                                        <img class="testimonial-author-img"
-                                                             src="Template/images/avatar/1.jpg" alt="" />
-                                                        <div class="testimonial-author">TYRION LANNISTER</div>
-                                                        <div class="testimonial-author-position">Founder-Ceo. Dell Corp
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="testimonial-content">
-                                                        <div class="testimonial-text">
-                                                            <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet,
-                                                            consectetur adipisicing elit, sed do eiusmod tempor
-                                                            incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                                            minim veniam, quis
-                                                            nostrud exercitation <i class="fa fa-quote-right"></i>
-                                                        </div>
-                                                        <img class="testimonial-author-img"
-                                                             src="Template/images/avatar/1.jpg" alt="" />
-                                                        <div class="testimonial-author">TYRION LANNISTER</div>
-                                                        <div class="testimonial-author-position">Founder-Ceo. Dell Corp
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="testimonial-content">
-                                                        <div class="testimonial-text">
-                                                            <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet,
-                                                            consectetur adipisicing elit, sed do eiusmod tempor
-                                                            incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                                            minim veniam, quis
-                                                            nostrud exercitation <i class="fa fa-quote-right"></i>
-                                                        </div>
-                                                        <img class="testimonial-author-img"
-                                                             src="Template/images/avatar/1.jpg" alt="" />
-                                                        <div class="testimonial-author">TYRION LANNISTER</div>
-                                                        <div class="testimonial-author-position">Founder-Ceo. Dell Corp
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /# column -->
-                        <div class="col-lg-8">
-                            <div class="card">
-                                <div class="card-title pr">
-                                    <h4>All Exam Result</h4>
-
-                                </div>
-                                <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table class="table student-data-table m-t-20">
-                                            <thead>
-                                                <tr>
-                                                    <th><label><input type="checkbox" value=""></label>Exam Name</th>
-                                                    <th>Subject</th>
-                                                    <th>Grade Point</th>
-                                                    <th>Percent Form</th>
-                                                    <th>Percent Upto</th>
-                                                    <th>Date</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Class Test</td>
-                                                    <td>Mathmatics</td>
-                                                    <td>
-                                                        4.00
-                                                    </td>
-                                                    <td>
-                                                        95.00
-                                                    </td>
-                                                    <td>
-                                                        100
-                                                    </td>
-                                                    <td>20/04/2017</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Class Test</td>
-                                                    <td>Mathmatics</td>
-                                                    <td>
-                                                        4.00
-                                                    </td>
-                                                    <td>
-                                                        95.00
-                                                    </td>
-                                                    <td>
-                                                        100
-                                                    </td>
-                                                    <td>20/04/2017</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Class Test</td>
-                                                    <td>English</td>
-                                                    <td>
-                                                        4.00
-                                                    </td>
-                                                    <td>
-                                                        95.00
-                                                    </td>
-                                                    <td>
-                                                        100
-                                                    </td>
-                                                    <td>20/04/2017</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Class Test</td>
-                                                    <td>Bangla</td>
-                                                    <td>
-                                                        4.00
-                                                    </td>
-                                                    <td>
-                                                        95.00
-                                                    </td>
-                                                    <td>
-                                                        100
-                                                    </td>
-                                                    <td>20/04/2017</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Class Test</td>
-                                                    <td>Mathmatics</td>
-                                                    <td>
-                                                        4.00
-                                                    </td>
-                                                    <td>
-                                                        95.00
-                                                    </td>
-                                                    <td>
-                                                        100
-                                                    </td>
-                                                    <td>20/04/2017</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Class Test</td>
-                                                    <td>English</td>
-                                                    <td>
-                                                        4.00
-                                                    </td>
-                                                    <td>
-                                                        95.00
-                                                    </td>
-                                                    <td>
-                                                        100
-                                                    </td>
-                                                    <td>20/04/2017</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Class Test</td>
-                                                    <td>Mathmatics</td>
-                                                    <td>
-                                                        4.00
-                                                    </td>
-                                                    <td>
-                                                        95.00
-                                                    </td>
-                                                    <td>
-                                                        100
-                                                    </td>
-                                                    <td>20/04/2017</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /# column -->
-                    </div>
-                    <!-- /# row -->
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <div class="card p-0">
-                                <div class="stat-widget-three home-widget-three">
-                                    <div class="stat-icon bg-facebook">
-                                        <i class="ti-facebook"></i>
-                                    </div>
-                                    <div class="stat-content">
-                                        <div class="stat-digit">8,268</div>
-                                        <div class="stat-text">Likes</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="card p-0">
-                                <div class="stat-widget-three home-widget-three">
-                                    <div class="stat-icon bg-youtube">
-                                        <i class="ti-youtube"></i>
-                                    </div>
-                                    <div class="stat-content">
-                                        <div class="stat-digit">12,545</div>
-                                        <div class="stat-text">Subscribes</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="card p-0">
-                                <div class="stat-widget-three home-widget-three">
-                                    <div class="stat-icon bg-twitter">
-                                        <i class="ti-twitter"></i>
-                                    </div>
-                                    <div class="stat-content">
-                                        <div class="stat-digit">7,982</div>
-                                        <div class="stat-text">Tweets</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="card p-0">
-                                <div class="stat-widget-three home-widget-three">
-                                    <div class="stat-icon bg-danger">
-                                        <i class="ti-linkedin"></i>
-                                    </div>
-                                    <div class="stat-content">
-                                        <div class="stat-digit">9,658</div>
-                                        <div class="stat-text">Followers</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="year-calendar"></div>
-                                </div>
-                            </div>
-                            <!-- /# card -->
-                        </div>
-                        <!-- /# column -->
-                        <div class="col-lg-4">
-                            <div class="card">
-                                <div class="card-title">
-                                    <h4>Notice Board </h4>
-
-                                </div>
-                                <div class="recent-comment m-t-15">
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <a href="#"><img class="media-object" src="Template/images/avatar/1.jpg"
-                                                             alt="..."></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <h4 class="media-heading color-primary">john doe</h4>
-                                            <p>Cras sit amet nibh libero, in gravida nulla.</p>
-                                            <p class="comment-date">10 min ago</p>
-                                        </div>
-                                    </div>
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <a href="#"><img class="media-object" src="Template/images/avatar/2.jpg"
-                                                             alt="..."></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <h4 class="media-heading color-success">Mr. John</h4>
-                                            <p>Cras sit amet nibh libero, in gravida nulla.</p>
-                                            <p class="comment-date">1 hour ago</p>
-                                        </div>
-                                    </div>
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <a href="#"><img class="media-object" src="Template/images/avatar/3.jpg"
-                                                             alt="..."></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <h4 class="media-heading color-danger">Mr. John</h4>
-                                            <p>Cras sit amet nibh libero, in gravida nulla.</p>
-                                            <div class="comment-date">Yesterday</div>
-                                        </div>
-                                    </div>
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <a href="#"><img class="media-object" src="Template/images/avatar/1.jpg"
-                                                             alt="..."></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <h4 class="media-heading color-primary">john doe</h4>
-                                            <p>Cras sit amet nibh libero, in gravida nulla.</p>
-                                            <p class="comment-date">10 min ago</p>
-                                        </div>
-                                    </div>
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <a href="#"><img class="media-object" src="Template/images/avatar/2.jpg"
-                                                             alt="..."></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <h4 class="media-heading color-success">Mr. John</h4>
-                                            <p>Cras sit amet nibh libero, in gravida nulla.</p>
-                                            <p class="comment-date">1 hour ago</p>
-                                        </div>
-                                    </div>
-                                    <div class="media no-border">
-                                        <div class="media-left">
-                                            <a href="#"><img class="media-object" src="Template/images/avatar/3.jpg"
-                                                             alt="..."></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <h4 class="media-heading color-info">Mr. John</h4>
-                                            <p>Cras sit amet nibh libero, in gravida nulla.</p>
-                                            <div class="comment-date">Yesterday</div>
+                                            <a class="carousel-control-prev" href="#detailedReports" role="button" data-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#detailedReports" role="button" data-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- /# card -->
                         </div>
-                        <!-- /# column -->
-                        <div class="col-lg-4">
-                            <div class="card">
-                                <div class="card-title">
-                                    <h4>Timeline</h4>
-
-                                </div>
-                                <div class="card-body">
-                                    <ul class="timeline">
-                                        <li>
-                                            <div class="timeline-badge primary"><i class="fa fa-smile-o"></i></div>
-                                            <div class="timeline-panel">
-                                                <div class="timeline-heading">
-                                                    <h5 class="timeline-title">School promote video sharing</h5>
-                                                </div>
-                                                <div class="timeline-body">
-                                                    <p>10 minutes ago</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="timeline-badge warning"><i class="fa fa-sun-o"></i></div>
-                                            <div class="timeline-panel">
-                                                <div class="timeline-heading">
-                                                    <h5 class="timeline-title">Ready our school website and online
-                                                        service</h5>
-                                                </div>
-                                                <div class="timeline-body">
-                                                    <p>20 minutes ago</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="timeline-badge danger"><i class="fa fa-times-circle-o"></i>
-                                            </div>
-                                            <div class="timeline-panel">
-                                                <div class="timeline-heading">
-                                                    <h5 class="timeline-title">Routine pubish our website form
-                                                        10/03/2017 </h5>
-                                                </div>
-                                                <div class="timeline-body">
-                                                    <p>30 minutes ago</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="timeline-badge success"><i class="fa fa-check-circle-o"></i>
-                                            </div>
-                                            <div class="timeline-panel">
-                                                <div class="timeline-heading">
-                                                    <h5 class="timeline-title">Principle quotation publish our website
-                                                    </h5>
-                                                </div>
-                                                <div class="timeline-body">
-                                                    <p>15 minutes ago</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="timeline-badge warning"><i class="fa fa-sun-o"></i></div>
-                                            <div class="timeline-panel">
-                                                <div class="timeline-heading">
-                                                    <h5 class="timeline-title">Class schedule publish our website</h5>
-                                                </div>
-                                                <div class="timeline-body">
-                                                    <p>20 minutes ago</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
+                        <div class="row">
+                            <div class="col-md-7 grid-margin stretch-card">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <p class="card-title mb-0">Top Products</p>
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Product</th>
+                                                        <th>Price</th>
+                                                        <th>Date</th>
+                                                        <th>Status</th>
+                                                    </tr>  
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Search Engine Marketing</td>
+                                                        <td class="font-weight-bold">$362</td>
+                                                        <td>21 Sep 2018</td>
+                                                        <td class="font-weight-medium"><div class="badge badge-success">Completed</div></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Search Engine Optimization</td>
+                                                        <td class="font-weight-bold">$116</td>
+                                                        <td>13 Jun 2018</td>
+                                                        <td class="font-weight-medium"><div class="badge badge-success">Completed</div></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Display Advertising</td>
+                                                        <td class="font-weight-bold">$551</td>
+                                                        <td>28 Sep 2018</td>
+                                                        <td class="font-weight-medium"><div class="badge badge-warning">Pending</div></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Pay Per Click Advertising</td>
+                                                        <td class="font-weight-bold">$523</td>
+                                                        <td>30 Jun 2018</td>
+                                                        <td class="font-weight-medium"><div class="badge badge-warning">Pending</div></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>E-Mail Marketing</td>
+                                                        <td class="font-weight-bold">$781</td>
+                                                        <td>01 Nov 2018</td>
+                                                        <td class="font-weight-medium"><div class="badge badge-danger">Cancelled</div></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Referral Marketing</td>
+                                                        <td class="font-weight-bold">$283</td>
+                                                        <td>20 Mar 2018</td>
+                                                        <td class="font-weight-medium"><div class="badge badge-warning">Pending</div></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Social media marketing</td>
+                                                        <td class="font-weight-bold">$897</td>
+                                                        <td>26 Oct 2018</td>
+                                                        <td class="font-weight-medium"><div class="badge badge-success">Completed</div></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <!-- /# card -->
-                        </div>
-                    </div>
-                    <!-- /# row -->
-
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="card">
-                                <div class="card-title">
-                                    <h4>Task</h4>
-
-                                </div>
-                                <div class="todo-list">
-                                    <div class="tdl-holder">
-                                        <div class="tdl-content">
-                                            <ul>
+                            <div class="col-md-5 grid-margin stretch-card">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">To Do Lists</h4>
+                                        <div class="list-wrapper pt-2">
+                                            <ul class="d-flex flex-column-reverse todo-list todo-list-custom">
                                                 <li>
-                                                    <label>
-                                                        <input type="checkbox"><i></i><span>22,Dec Publish The Final
-                                                            Exam Result</span>
-                                                        <a href='#' class="ti-close"></a>
-                                                    </label>
+                                                    <div class="form-check form-check-flat">
+                                                        <label class="form-check-label">
+                                                            <input class="checkbox" type="checkbox">
+                                                            Meeting with Urban Team
+                                                        </label>
+                                                    </div>
+                                                    <i class="remove ti-close"></i>
+                                                </li>
+                                                <li class="completed">
+                                                    <div class="form-check form-check-flat">
+                                                        <label class="form-check-label">
+                                                            <input class="checkbox" type="checkbox" checked>
+                                                            Duplicate a project for new customer
+                                                        </label>
+                                                    </div>
+                                                    <i class="remove ti-close"></i>
                                                 </li>
                                                 <li>
-                                                    <label>
-                                                        <input type="checkbox" checked><i></i><span>First Jan Start Our
-                                                            School</span>
-                                                        <a href='#' class="ti-close"></a>
-                                                    </label>
+                                                    <div class="form-check form-check-flat">
+                                                        <label class="form-check-label">
+                                                            <input class="checkbox" type="checkbox">
+                                                            Project meeting with CEO
+                                                        </label>
+                                                    </div>
+                                                    <i class="remove ti-close"></i>
+                                                </li>
+                                                <li class="completed">
+                                                    <div class="form-check form-check-flat">
+                                                        <label class="form-check-label">
+                                                            <input class="checkbox" type="checkbox" checked>
+                                                            Follow up of team zilla
+                                                        </label>
+                                                    </div>
+                                                    <i class="remove ti-close"></i>
                                                 </li>
                                                 <li>
-                                                    <label>
-                                                        <input type="checkbox"><i></i><span>Recently Our Maganement
-                                                            Programme Start</span>
-                                                        <a href='#' class="ti-close"></a>
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <label>
-                                                        <input type="checkbox" checked><i></i><span>Check out some
-                                                            Popular courses</span>
-                                                        <a href='#' class="ti-close"></a>
-                                                    </label>
-                                                </li>
-
-                                                <li>
-                                                    <label>
-                                                        <input type="checkbox" checked><i></i><span>First Jan Start Our
-                                                            School</span>
-                                                        <a href='#' class="ti-close"></a>
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <label>
-                                                        <input type="checkbox" checked><i></i><span>Connect with one new
-                                                            person</span>
-                                                        <a href='#' class="ti-close"></a>
-                                                    </label>
+                                                    <div class="form-check form-check-flat">
+                                                        <label class="form-check-label">
+                                                            <input class="checkbox" type="checkbox">
+                                                            Level up for Antony
+                                                        </label>
+                                                    </div>
+                                                    <i class="remove ti-close"></i>
                                                 </li>
                                             </ul>
                                         </div>
-                                        <input type="text" class="tdl-new form-control"
-                                               placeholder="Write new item and hit 'Enter'...">
+                                        <div class="add-items d-flex mb-0 mt-2">
+                                            <input type="text" class="form-control todo-list-input"  placeholder="Add new task">
+                                            <button class="add btn btn-icon text-primary todo-list-add-btn bg-transparent"><i class="icon-circle-plus"></i></button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-8">
-                            <div class="card">
-                                <div class="card-title pr">
-                                    <h4>All Expense</h4>
-
+                        <div class="row">
+                            <div class="col-md-4 stretch-card grid-margin">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <p class="card-title mb-0">Projects</p>
+                                        <div class="table-responsive">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="pl-0  pb-2 border-bottom">Places</th>
+                                                        <th class="border-bottom pb-2">Orders</th>
+                                                        <th class="border-bottom pb-2">Users</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="pl-0">Kentucky</td>
+                                                        <td><p class="mb-0"><span class="font-weight-bold mr-2">65</span>(2.15%)</p></td>
+                                                        <td class="text-muted">65</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pl-0">Ohio</td>
+                                                        <td><p class="mb-0"><span class="font-weight-bold mr-2">54</span>(3.25%)</p></td>
+                                                        <td class="text-muted">51</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pl-0">Nevada</td>
+                                                        <td><p class="mb-0"><span class="font-weight-bold mr-2">22</span>(2.22%)</p></td>
+                                                        <td class="text-muted">32</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pl-0">North Carolina</td>
+                                                        <td><p class="mb-0"><span class="font-weight-bold mr-2">46</span>(3.27%)</p></td>
+                                                        <td class="text-muted">15</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pl-0">Montana</td>
+                                                        <td><p class="mb-0"><span class="font-weight-bold mr-2">17</span>(1.25%)</p></td>
+                                                        <td class="text-muted">25</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pl-0">Nevada</td>
+                                                        <td><p class="mb-0"><span class="font-weight-bold mr-2">52</span>(3.11%)</p></td>
+                                                        <td class="text-muted">71</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pl-0 pb-0">Louisiana</td>
+                                                        <td class="pb-0"><p class="mb-0"><span class="font-weight-bold mr-2">25</span>(1.32%)</p></td>
+                                                        <td class="pb-0">14</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table class="table student-data-table m-t-20">
-                                            <thead>
-                                                <tr>
-                                                    <th><label><input type="checkbox" value=""></label>ID</th>
-                                                    <th>Expense Type</th>
-                                                    <th>Amount</th>
-                                                    <th>Status</th>
-                                                    <th>Email</th>
-                                                    <th>Date</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td><label><input type="checkbox" value=""></label>#2901</td>
-                                                    <td>
-                                                        Salary
-                                                    </td>
-                                                    <td>
-                                                        $2000
-                                                    </td>
-                                                    <td>
-                                                        <span class="badge badge-primary">Paid</span>
-                                                    </td>
-                                                    <td>
-                                                        edumin@gmail.com
-                                                    </td>
-                                                    <td>
-                                                        10/05/2017
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><label><input type="checkbox" value=""></label>#2901</td>
-                                                    <td>
-                                                        Salary
-                                                    </td>
-                                                    <td>
-                                                        $2000
-                                                    </td>
-                                                    <td>
-                                                        <span class="badge badge-warning">Pending</span>
-                                                    </td>
-                                                    <td>
-                                                        edumin@gmail.com
-                                                    </td>
-                                                    <td>
-                                                        10/05/2017
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><label><input type="checkbox" value=""></label>#2901</td>
-                                                    <td>
-                                                        Salary
-                                                    </td>
-                                                    <td>
-                                                        $2000
-                                                    </td>
-                                                    <td>
-                                                        <span class="badge badge-primary">Paid</span>
-                                                    </td>
-                                                    <td>
-                                                        edumin@gmail.com
-                                                    </td>
-                                                    <td>
-                                                        10/05/2017
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><label><input type="checkbox" value=""></label>#2901</td>
-                                                    <td>
-                                                        Salary
-                                                    </td>
-                                                    <td>
-                                                        $2000
-                                                    </td>
-                                                    <td>
-                                                        <span class="badge badge-danger">Due</span>
-                                                    </td>
-                                                    <td>
-                                                        edumin@gmail.com
-                                                    </td>
-                                                    <td>
-                                                        10/05/2017
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><label><input type="checkbox" value=""></label>#2901</td>
-                                                    <td>
-                                                        Salary
-                                                    </td>
-                                                    <td>
-                                                        $2000
-                                                    </td>
-                                                    <td>
-                                                        <span class="badge badge-primary">Paid</span>
-                                                    </td>
-                                                    <td>
-                                                        edumin@gmail.com
-                                                    </td>
-                                                    <td>
-                                                        10/05/2017
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                            </div>
+                            <div class="col-md-4 stretch-card grid-margin">
+                                <div class="row">
+                                    <div class="col-md-12 grid-margin stretch-card">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <p class="card-title">Charts</p>
+                                                <div class="charts-data">
+                                                    <div class="mt-3">
+                                                        <p class="mb-0">Data 1</p>
+                                                        <div class="d-flex justify-content-between align-items-center">
+                                                            <div class="progress progress-md flex-grow-1 mr-4">
+                                                                <div class="progress-bar bg-inf0" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <p class="mb-0">5k</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mt-3">
+                                                        <p class="mb-0">Data 2</p>
+                                                        <div class="d-flex justify-content-between align-items-center">
+                                                            <div class="progress progress-md flex-grow-1 mr-4">
+                                                                <div class="progress-bar bg-info" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <p class="mb-0">1k</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mt-3">
+                                                        <p class="mb-0">Data 3</p>
+                                                        <div class="d-flex justify-content-between align-items-center">
+                                                            <div class="progress progress-md flex-grow-1 mr-4">
+                                                                <div class="progress-bar bg-info" role="progressbar" style="width: 48%" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <p class="mb-0">992</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mt-3">
+                                                        <p class="mb-0">Data 4</p>
+                                                        <div class="d-flex justify-content-between align-items-center">
+                                                            <div class="progress progress-md flex-grow-1 mr-4">
+                                                                <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <p class="mb-0">687</p>
+                                                        </div>
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 stretch-card grid-margin grid-margin-md-0">
+                                        <div class="card data-icon-card-primary">
+                                            <div class="card-body">
+                                                <p class="card-title text-white">Number of Meetings</p>                      
+                                                <div class="row">
+                                                    <div class="col-8 text-white">
+                                                        <h3>34040</h3>
+                                                        <p class="text-white font-weight-500 mb-0">The total number of sessions within the date range.It is calculated as the sum . </p>
+                                                    </div>
+                                                    <div class="col-4 background-icon">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 stretch-card grid-margin">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <p class="card-title">Notifications</p>
+                                        <ul class="icon-data-list">
+                                            <li>
+                                                <div class="d-flex">
+                                                    <img src="Template/images/faces/face1.jpg" alt="user">
+                                                    <div>
+                                                        <p class="text-info mb-1">Isabella Becker</p>
+                                                        <p class="mb-0">Sales dashboard have been created</p>
+                                                        <small>9:30 am</small>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex">
+                                                    <img src="Template/images/faces/face2.jpg" alt="user">
+                                                    <div>
+                                                        <p class="text-info mb-1">Adam Warren</p>
+                                                        <p class="mb-0">You have done a great job #TW111</p>
+                                                        <small>10:30 am</small>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex">
+                                                    <img src="Template/images/faces/face3.jpg" alt="user">
+                                                    <div>
+                                                        <p class="text-info mb-1">Leonard Thornton</p>
+                                                        <p class="mb-0">Sales dashboard have been created</p>
+                                                        <small>11:30 am</small>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex">
+                                                    <img src="Template/images/faces/face4.jpg" alt="user">
+                                                    <div>
+                                                        <p class="text-info mb-1">George Morrison</p>
+                                                        <p class="mb-0">Sales dashboard have been created</p>
+                                                        <small>8:50 am</small>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex">
+                                                    <img src="Template/images/faces/face5.jpg" alt="user">
+                                                    <div>
+                                                        <p class="text-info mb-1">Ryan Cortez</p>
+                                                        <p class="mb-0">Herbs are fun and easy to grow.</p>
+                                                        <small>9:00 am</small>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- /# column -->
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="footer">
-                                <p>2018 © Admin Board. - <a href="#">example.com</a></p>
+                        <div class="row">
+                            <div class="col-md-12 grid-margin stretch-card">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <p class="card-title">Advanced Table</p>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="table-responsive">
+                                                    <table id="example" class="display expandable-table" style="width:100%">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Quote#</th>
+                                                                <th>Product</th>
+                                                                <th>Business type</th>
+                                                                <th>Policy holder</th>
+                                                                <th>Premium</th>
+                                                                <th>Status</th>
+                                                                <th>Updated at</th>
+                                                                <th></th>
+                                                            </tr>
+                                                        </thead>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </section>
+                    <!-- content-wrapper ends -->
+                    <!-- partial:partials/_footer.html -->
+                    <footer class="footer">
+                        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.  Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
+                            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
+                        </div>
+                    </footer>
+                    <!-- partial -->
+                </div>
+                <!-- main-panel ends -->
             </div>
+            <!-- page-body-wrapper ends -->
         </div>
-    </div>
+        <!-- container-scroller -->
 
-    <!-- jquery vendor -->
-    <script src="Template/js/lib/jquery.min.js"></script>
-    <script src="Template/js/lib/jquery.nanoscroller.min.js"></script>
-    <!-- nano scroller -->
-    <script src="Template/js/lib/menubar/sidebar.js"></script>
-    <script src="Template/js/lib/preloader/pace.min.js"></script>
-    <!-- sidebar -->
+        <!-- plugins:js -->
+        <script src="Template/vendors/js/vendor.bundle.base.js"></script>
+        <!-- endinject -->
+        <!-- Plugin js for this page -->
+        <script src="Template/vendors/chart.js/Chart.min.js"></script>
+        <script src="Template/vendors/datatables.net/jquery.dataTables.js"></script>
+        <script src="Template/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+        <script src="Template/js/dataTables.select.min.js"></script>
 
-    <script src="Template/js/lib/bootstrap.min.js"></script>
-    <script src="Template/js/scripts.js"></script>
-    <!-- bootstrap -->
-
-    <script src="Template/js/lib/calendar-2/moment.latest.min.js"></script>
-    <script src="Template/js/lib/calendar-2/pignose.calendar.min.js"></script>
-    <script src="Template/js/lib/calendar-2/pignose.init.js"></script>
-
-
-    <script src="Template/js/lib/weather/jquery.simpleWeather.min.js"></script>
-    <script src="Template/js/lib/weather/weather-init.js"></script>
-    <script src="Template/js/lib/circle-progress/circle-progress.min.js"></script>
-    <script src="Template/js/lib/circle-progress/circle-progress-init.js"></script>
-    <script src="Template/js/lib/chartist/chartist.min.js"></script>
-    <script src="Template/js/lib/sparklinechart/jquery.sparkline.min.js"></script>
-    <script src="Template/js/lib/sparklinechart/sparkline.init.js"></script>
-    <script src="Template/js/lib/owl-carousel/owl.carousel.min.js"></script>
-    <script src="Template/js/lib/owl-carousel/owl.carousel-init.js"></script>
-    <!-- scripit init-->
-    <script src="Template/js/dashboard2.js"></script>
-</body>
+        <!-- End plugin js for this page -->
+        <!-- inject:js -->
+        <script src="Template/js/off-canvas.js"></script>
+        <script src="Template/js/hoverable-collapse.js"></script>
+        <script src="Template/js/template.js"></script>
+        <script src="Template/js/settings.js"></script>
+        <script src="Template/js/todolist.js"></script>
+        <!-- endinject -->
+        <!-- Custom js for this page-->
+        <script src="Template/js/dashboard.js"></script>
+        <script src="Template/js/Chart.roundedBarCharts.js"></script>
+        <!-- End custom js for this page-->
+    </body>
 
 </html>
 

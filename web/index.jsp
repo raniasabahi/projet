@@ -8,17 +8,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- theme meta -->
-    <meta name="theme-name" content="focus" />
-    <title>Focus Admin: Creative Admin Dashboard</title>
-    <!-- ================= Favicon ================== -->
-    <!-- Standard -->
-    <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
-    <!-- Retina iPad Touch Icon-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- theme meta -->
+        <meta name="theme-name" content="focus"/>
+        <title>Focus Admin: Creative Admin Dashboard</title>
+        <!-- ================= Favicon ================== -->
+        <!-- Standard -->
+        <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
+        <!-- Retina iPad Touch Icon-->
+   
     <link rel="apple-touch-icon" sizes="144x144" href="http://placehold.it/144.png/000/fff">
     <!-- Retina iPhone Touch Icon-->
     <link rel="apple-touch-icon" sizes="114x114" href="http://placehold.it/114.png/000/fff">
@@ -41,7 +42,7 @@
 </head>
 
 <body>
-
+   
     <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
         <div class="nano">
             <div class="nano-content">
@@ -52,10 +53,7 @@
                     <li><a class="sidebar-sub-toggle"><i class="ti-home"></i> Dashboard <span
                                 class="badge badge-primary">2</span> <span
                                 class="sidebar-collapse-icon ti-angle-down"></span></a>
-                        <ul>
-                            <li><a href="Template/index.html">Dashboard 1</a></li>
-                            <li><a href="Template/index.html">Dashboard 2</a></li>
-                        </ul>
+                        
                     </li>
 
                     <li class="label">Apps</li>
@@ -184,7 +182,7 @@
                                             <li>
                                                 <a href="#">
                                                     <img class="pull-left m-r-10 avatar-img"
-                                                        src="Template/images/avatar/3.jpg" alt="" />
+                                                         src="Template/images/avatar/3.jpg" alt="" />
                                                     <div class="notification-content">
                                                         <small class="notification-timestamp pull-right">02:34
                                                             PM</small>
@@ -196,7 +194,7 @@
                                             <li>
                                                 <a href="#">
                                                     <img class="pull-left m-r-10 avatar-img"
-                                                        src="Template/images/avatar/3.jpg" alt="" />
+                                                         src="Template/images/avatar/3.jpg" alt="" />
                                                     <div class="notification-content">
                                                         <small class="notification-timestamp pull-right">02:34
                                                             PM</small>
@@ -208,7 +206,7 @@
                                             <li>
                                                 <a href="#">
                                                     <img class="pull-left m-r-10 avatar-img"
-                                                        src="Template/images/avatar/3.jpg" alt="" />
+                                                         src="Template/images/avatar/3.jpg" alt="" />
                                                     <div class="notification-content">
                                                         <small class="notification-timestamp pull-right">02:34
                                                             PM</small>
@@ -221,7 +219,7 @@
                                             <li>
                                                 <a href="#">
                                                     <img class="pull-left m-r-10 avatar-img"
-                                                        src="Template/images/avatar/3.jpg" alt="" />
+                                                         src="Template/images/avatar/3.jpg" alt="" />
                                                     <div class="notification-content">
                                                         <small class="notification-timestamp pull-right">02:34
                                                             PM</small>
@@ -254,7 +252,7 @@
                                             <li class="notification-unread">
                                                 <a href="#">
                                                     <img class="pull-left m-r-10 avatar-img"
-                                                        src="Template/images/avatar/1.jpg" alt="" />
+                                                         src="Template/images/avatar/1.jpg" alt="" />
                                                     <div class="notification-content">
                                                         <small class="notification-timestamp pull-right">02:34
                                                             PM</small>
@@ -267,7 +265,7 @@
                                             <li class="notification-unread">
                                                 <a href="#">
                                                     <img class="pull-left m-r-10 avatar-img"
-                                                        src="images/avatar/2.jpg" alt="" />
+                                                         src="Template/images/avatar/2.jpg" alt="" />
                                                     <div class="notification-content">
                                                         <small class="notification-timestamp pull-right">02:34
                                                             PM</small>
@@ -280,7 +278,7 @@
                                             <li>
                                                 <a href="#">
                                                     <img class="pull-left m-r-10 avatar-img"
-                                                        src="images/avatar/3.jpg" alt="" />
+                                                         src="Template/images/avatar/3.jpg" alt="" />
                                                     <div class="notification-content">
                                                         <small class="notification-timestamp pull-right">02:34
                                                             PM</small>
@@ -293,7 +291,7 @@
                                             <li>
                                                 <a href="#">
                                                     <img class="pull-left m-r-10 avatar-img"
-                                                        src="Template/images/avatar/2.jpg" alt="" />
+                                                         src="Template/images/avatar/2.jpg" alt="" />
                                                     <div class="notification-content">
                                                         <small class="notification-timestamp pull-right">02:34
                                                             PM</small>
@@ -350,7 +348,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="Template/page-login.html">
                                                     <i class="ti-power-off"></i>
                                                     <span>Logout</span>
                                                 </a>
@@ -488,7 +486,7 @@
                                                             nostrud exercitation <i class="fa fa-quote-right"></i>
                                                         </div>
                                                         <img class="testimonial-author-img"
-                                                            src="images/avatar/1.jpg" alt="" />
+                                                             src="Template/images/avatar/1.jpg" alt="" />
                                                         <div class="testimonial-author">TYRION LANNISTER</div>
                                                         <div class="testimonial-author-position">Founder-Ceo. Dell Corp
                                                         </div>
@@ -504,7 +502,7 @@
                                                             nostrud exercitation <i class="fa fa-quote-right"></i>
                                                         </div>
                                                         <img class="testimonial-author-img"
-                                                            src="images/avatar/1.jpg" alt="" />
+                                                             src="Template/images/avatar/1.jpg" alt="" />
                                                         <div class="testimonial-author">TYRION LANNISTER</div>
                                                         <div class="testimonial-author-position">Founder-Ceo. Dell Corp
                                                         </div>
@@ -520,7 +518,7 @@
                                                             nostrud exercitation <i class="fa fa-quote-right"></i>
                                                         </div>
                                                         <img class="testimonial-author-img"
-                                                            src="images/avatar/1.jpg" alt="" />
+                                                             src="Template/images/avatar/1.jpg" alt="" />
                                                         <div class="testimonial-author">TYRION LANNISTER</div>
                                                         <div class="testimonial-author-position">Founder-Ceo. Dell Corp
                                                         </div>
@@ -536,7 +534,7 @@
                                                             nostrud exercitation <i class="fa fa-quote-right"></i>
                                                         </div>
                                                         <img class="testimonial-author-img"
-                                                            src="Template/images/avatar/1.jpg" alt="" />
+                                                             src="Template/images/avatar/1.jpg" alt="" />
                                                         <div class="testimonial-author">TYRION LANNISTER</div>
                                                         <div class="testimonial-author-position">Founder-Ceo. Dell Corp
                                                         </div>
@@ -552,7 +550,7 @@
                                                             nostrud exercitation <i class="fa fa-quote-right"></i>
                                                         </div>
                                                         <img class="testimonial-author-img"
-                                                            src="images/avatar/1.jpg" alt="" />
+                                                             src="Template/images/avatar/1.jpg" alt="" />
                                                         <div class="testimonial-author">TYRION LANNISTER</div>
                                                         <div class="testimonial-author-position">Founder-Ceo. Dell Corp
                                                         </div>
@@ -568,7 +566,7 @@
                                                             nostrud exercitation <i class="fa fa-quote-right"></i>
                                                         </div>
                                                         <img class="testimonial-author-img"
-                                                            src="Template/images/avatar/1.jpg" alt="" />
+                                                             src="Template/images/avatar/1.jpg" alt="" />
                                                         <div class="testimonial-author">TYRION LANNISTER</div>
                                                         <div class="testimonial-author-position">Founder-Ceo. Dell Corp
                                                         </div>
@@ -783,7 +781,7 @@
                                     <div class="media">
                                         <div class="media-left">
                                             <a href="#"><img class="media-object" src="Template/images/avatar/1.jpg"
-                                                    alt="..."></a>
+                                                             alt="..."></a>
                                         </div>
                                         <div class="media-body">
                                             <h4 class="media-heading color-primary">john doe</h4>
@@ -794,7 +792,7 @@
                                     <div class="media">
                                         <div class="media-left">
                                             <a href="#"><img class="media-object" src="Template/images/avatar/2.jpg"
-                                                    alt="..."></a>
+                                                             alt="..."></a>
                                         </div>
                                         <div class="media-body">
                                             <h4 class="media-heading color-success">Mr. John</h4>
@@ -805,7 +803,7 @@
                                     <div class="media">
                                         <div class="media-left">
                                             <a href="#"><img class="media-object" src="Template/images/avatar/3.jpg"
-                                                    alt="..."></a>
+                                                             alt="..."></a>
                                         </div>
                                         <div class="media-body">
                                             <h4 class="media-heading color-danger">Mr. John</h4>
@@ -816,7 +814,7 @@
                                     <div class="media">
                                         <div class="media-left">
                                             <a href="#"><img class="media-object" src="Template/images/avatar/1.jpg"
-                                                    alt="..."></a>
+                                                             alt="..."></a>
                                         </div>
                                         <div class="media-body">
                                             <h4 class="media-heading color-primary">john doe</h4>
@@ -827,7 +825,7 @@
                                     <div class="media">
                                         <div class="media-left">
                                             <a href="#"><img class="media-object" src="Template/images/avatar/2.jpg"
-                                                    alt="..."></a>
+                                                             alt="..."></a>
                                         </div>
                                         <div class="media-body">
                                             <h4 class="media-heading color-success">Mr. John</h4>
@@ -838,7 +836,7 @@
                                     <div class="media no-border">
                                         <div class="media-left">
                                             <a href="#"><img class="media-object" src="Template/images/avatar/3.jpg"
-                                                    alt="..."></a>
+                                                             alt="..."></a>
                                         </div>
                                         <div class="media-body">
                                             <h4 class="media-heading color-info">Mr. John</h4>
@@ -984,7 +982,7 @@
                                             </ul>
                                         </div>
                                         <input type="text" class="tdl-new form-control"
-                                            placeholder="Write new item and hit 'Enter'...">
+                                               placeholder="Write new item and hit 'Enter'...">
                                     </div>
                                 </div>
                             </div>

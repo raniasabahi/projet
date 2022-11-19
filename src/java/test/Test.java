@@ -6,8 +6,11 @@
 package test;
 
 import entities.Admin;
+import entities.Client;
+import javax.swing.text.html.CSS;
 import org.hibernate.Hibernate;
 import service.AdminService;
+import service.ClientService;
 import util.HibernateUtil;
 
 /**
@@ -19,5 +22,11 @@ public class Test {
         HibernateUtil.getSessionFactory().openSession();
         /*AdminService as = new AdminService();
         as.create(new Admin( "nouha", "nouha@gmail.com", "123"));*/
-    }
-}
+       /* ClientService cs=new ClientService();
+        cs.create(new Client("Soualime", "Ahmed", "0625748931", "Bd Massira", "soulami@gmail.com", "123"));
+    
+    for (Client e: cs.findAll()){
+   
+            System.out.println(e.getPrenom() + e.getNom());
+    }*/
+    }}

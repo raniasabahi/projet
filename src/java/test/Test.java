@@ -5,7 +5,9 @@
  */
 package test;
 
+import entities.Admin;
 import org.hibernate.Hibernate;
+import service.AdminService;
 import util.HibernateUtil;
 
 /**
@@ -15,5 +17,7 @@ import util.HibernateUtil;
 public class Test {
     public static void main(String[] args) {
         HibernateUtil.getSessionFactory().openSession();
+        /*AdminService as = new AdminService();
+        as.create(new Admin( "nouha", "nouha@gmail.com", "123"));*/
     }
 }

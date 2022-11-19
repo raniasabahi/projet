@@ -5,6 +5,7 @@
  */
 package controlleur;
 
+import entities.Admin;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -18,7 +19,7 @@ import service.AdminService;
  *
  * @author RANIA
  */
-@WebServlet(name = "InscriptionController", urlPatterns = {"/InscriptionController"})
+@WebServlet("/InscriptionController")
 public class InscriptionController extends HttpServlet {
 
     /**
@@ -36,8 +37,8 @@ public class InscriptionController extends HttpServlet {
         String name = request.getParameter("name");
          String email = request.getParameter("email");
           String password = request.getParameter("passowrd");
-          
-      response.sendRedirect("Template/pages/samples/register.html");
+          as.create(new Admin(name ,email,password));
+      response.sendRedirect("Template/pages/samples/login.html");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -66,6 +67,7 @@ public class InscriptionController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+     
     }
 
     /**

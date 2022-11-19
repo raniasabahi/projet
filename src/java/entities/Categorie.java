@@ -56,11 +56,11 @@ public class Categorie implements Serializable{
         this.nom = nom;
     }
 
-    public Categorie getSousCateg() {
+    public Categorie getCategorie() {
         return categorie;
     }
 
-    public void setSousCateg(Categorie categorie) {
+    public void setCategorie(Categorie categorie) {
         this.categorie = categorie;
     }
     

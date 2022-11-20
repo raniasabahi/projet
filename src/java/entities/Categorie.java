@@ -35,6 +35,11 @@ public class Categorie implements Serializable{
     public Categorie() {
     }
 
+    public Categorie(String nom) {
+        this.nom = nom;
+    }
+
+    
     public Categorie(String nom, Categorie categorie) {
         this.nom = nom;
         this.categorie = categorie;

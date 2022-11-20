@@ -309,13 +309,14 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">Ajout d'une catégorie</h4>
-                                        <form class="forms-sample" method="GET" action="">
+                                        <form class="forms-sample">
                                             <div class="form-group">
                                                 <label for="exampleInputUsername1">nom</label>
-                                                <input type="text" class="form-control" id="exampleInputUsername1" placeholder="nom">
+                                                <input type="text" name="nom" class="form-control" id="exampleInputUsername1" placeholder="nom">
                                             </div>
                                             <button type="submit" class="btn btn-primary mr-2">Submit</button>
                                             <button class="btn btn-light">Cancel</button>
+                                          
                                         </form>
                                     </div>
                                 </div>
@@ -328,7 +329,7 @@
 
                                         <ul class="list-ticked">
                                             <%
-                                                CategorieService cs = new CategorieService();
+                                                CategorieService cs =  new CategorieService();
                                                 for (Categorie c : cs.findAll()) {
                                             %>
                                             <li><%= c.getNom()%></li>
@@ -347,7 +348,7 @@
                                             <div class="form-group row">
                                                 <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Nom</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control" id="exampleInputUsername2" placeholder="SousCategorie">
+                                                    <input type="text" name="nom" class="form-control" id="exampleInputUsername2" placeholder="SousCategorie">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -362,6 +363,7 @@
                                             </div>
                                             <button type="submit" class="btn btn-primary mr-2">Submit</button>
                                             <button class="btn btn-light">Cancel</button>
+                                            
                                         </form>
                                     </div>
                                 </div>

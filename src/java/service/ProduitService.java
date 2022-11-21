@@ -9,7 +9,6 @@ import dao.IDao;
 import entities.Categorie;
 import entities.Marque;
 import entities.Produit;
-import entities.Produit;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;

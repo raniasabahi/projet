@@ -4,6 +4,10 @@
     Author     : RANIA
 --%>
 
+<%@page import="javax.imageio.ImageIO"%>
+<%@page import="java.awt.image.BufferedImage"%>
+<%@page import="java.io.ByteArrayInputStream"%>
+<%@page import="java.sql.Blob"%>
 <%@page import="entities.Produit"%>
 <%@page import="service.ProduitService"%>
 <%@page import="service.MarqueService"%>
@@ -314,37 +318,37 @@
                                     <div class="card-body">
                                         <h4 class="card-title">Ajout d'un produit :</h4>
 
-                                        <form class="forms-sample">
+                                        <form method="GET" action="http://localhost:8080/projet2/ProduitControlleur"  class="forms-sample">
                                             <div class="form-group">
                                                 <label for="exampleInputName1">Nom</label>
-                                                <input type="text" class="form-control" id="exampleInputName1" placeholder="Nom">
+                                                <input type="text" name="nom" class="form-control" id="exampleInputName1" placeholder="Nom">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail3">Désignation</label>
-                                                <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Désignation">
+                                                <input type="text" name="designation" class="form-control" id="exampleInputEmail3" placeholder="Désignation">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputPassword4">Prix</label>
-                                                <input type="text" class="form-control" id="exampleInputPassword4" placeholder="Prix">
+                                                <input type="text" name="prix" class="form-control" id="exampleInputPassword4" placeholder="Prix">
                                             </div>
 
                                             <div class="form-group">
                                                 <label>File upload</label>
-                                                <input type="file" name="img[]" class="file-upload-default">
                                                 <div class="input-group col-xs-12">
-                                                    <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                                                    <input type="text" name="image" class="form-control file-upload-info" disabled placeholder="Upload Image">
                                                     <span class="input-group-append">
-                                                        <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                                                        <input type="file" name="image">
                                                     </span>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputCity1">unité</label>
-                                                <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location">
+                                                <input type="text" name="unite" class="form-control" id="exampleInputCity1" placeholder="unité">
                                             </div>
                                             <div class="form-group">
                                                 <label>Catégorie :</label>
                                                 <select name = "categorie" class="js-example-basic-single w-100">
+                                                    <option></option>
                                                     <%
                                                         CategorieService cs = new CategorieService();
                                                         for (Categorie c : cs.findAll()) {
@@ -357,6 +361,7 @@
                                             <div class="form-group">
                                                 <label>Marque :</label>
                                                 <select name="marque" class="js-example-basic-single w-100">
+                                                    <option></option>
                                                     <%
                                                         MarqueService ms = new MarqueService();
                                                         for (Marque c : ms.findAll()) {
@@ -367,7 +372,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleTextarea1">Description</label>
-                                                <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                                                <textarea class="form-control" name="description" id="exampleTextarea1" rows="4"></textarea>
                                             </div>
                                             <button type="submit" class="btn btn-primary mr-2">Submit</button>
                                             <button class="btn btn-light">Cancel</button>
@@ -406,31 +411,36 @@
                                                 </thead>
                                                 <tbody>
                                                     <%
-                                                    ProduitService ps= new ProduitService();
-                                                    for(Produit p : ps.findAll()){
+                                                        ProduitService ps = new ProduitService();
+                                                        for (Produit p : ps.findAll()) {
                                                     %>
                                                     <tr>
                                                         <td class="py-1">
-                                                            <img src="<%= p.getImage()%>" alt="image"/>
+                                                            <%
+                                                                ByteArrayInputStream input_stream = new ByteArrayInputStream(p.getImage().getBytes(1l, (int) p.getImage().length()));
+                                                                BufferedImage final_buffered_image = ImageIO.read(input_stream);
+                                                                
+                                                                     %>
+                                                            <img src="<%= final_buffered_image%>" alt="image"/>
                                                         </td>
                                                         <td>
-                                                           <%= p.getNom()%> 
+                                                            <%= p.getNom()%> 
                                                         </td>
                                                         <td>
-                                                           <%= p.getPrix()%> 
+                                                            <%= p.getPrix()%> 
                                                         </td>
                                                         <td>
-                                                         <%= p.getUnite()%>    
+                                                            <%= p.getUnite()%>    
                                                         </td>
                                                         <td>
-                                                           <%= p.getCategorie().getNom()%>
+                                                            <%= p.getCategorie().getNom()%>
                                                         </td>
                                                         <td>
-                                                           <%= p.getMarque().getNom()%>
+                                                            <%= p.getMarque().getNom()%>
                                                         </td>
                                                     </tr>
                                                     <%}%>
-                                                    
+
                                                 </tbody>
                                             </table>
                                         </div>

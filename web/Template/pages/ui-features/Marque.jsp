@@ -309,10 +309,10 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">Ajout d'une marques</h4>
-                                        <form class="forms-sample" method="GET" action="">
+                                        <form method="GET" action="http://localhost:8080/projet2/MarqueCotrolleur" class="forms-sample">
                                             <div class="form-group">
                                                 <label for="exampleInputUsername1">nom</label>
-                                                <input type="text" class="form-control" id="exampleInputUsername1" placeholder="nom">
+                                                <input type="text" name="nom" class="form-control" id="exampleInputUsername1" placeholder="nom">
                                             </div>
                                             <button type="submit" class="btn btn-primary mr-2">Submit</button>
                                             <button class="btn btn-light">Cancel</button>

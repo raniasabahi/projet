@@ -6,6 +6,7 @@
 
 <%@page import="entities.Categorie"%>
 <%@page import="service.CategorieService"%>
+<%@page import="ajout.CategorieControlleur"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -309,42 +310,24 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">Ajout d'une catégorie</h4>
-                                        <form class="forms-sample">
+                                        <form method="GET" action="http://localhost:8080/projet2/Categorie" class="forms-sample">
+
                                             <div class="form-group">
                                                 <label for="exampleInputUsername1">nom</label>
                                                 <input type="text" name="nom" class="form-control" id="exampleInputUsername1" placeholder="nom">
                                             </div>
                                             <button type="submit" class="btn btn-primary mr-2">Submit</button>
                                             <button class="btn btn-light">Cancel</button>
-                                          
                                         </form>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col-md-4 grid-margin grid-margin-md-0 stretch-card">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title">Liste des catégories</h4>
-
-                                        <ul class="list-ticked">
-                                            <%
-                                                CategorieService cs =  new CategorieService();
-                                                for (Categorie c : cs.findAll()) {
-                                            %>
-                                            <li><%= c.getNom()%></li>
-                                                <%}%>
-                                        </ul>    
-                                    </div>
-                                </div>
-                            </div>
-
                             <div class="col-md-6 grid-margin stretch-card">
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">Ajout d'une sous catégorie :</h4>
 
-                                        <form class="forms-sample">
+                                        <form method="GET" action="http://localhost:8080/projet2/SousCategorieControlleur" class="forms-sample">
                                             <div class="form-group row">
                                                 <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Nom</label>
                                                 <div class="col-sm-9">
@@ -355,7 +338,9 @@
                                                 <select name="categorie" class="js-example-basic-single w-100" >
                                                     <option></option>
                                                     <%
+                                                      CategorieService cs = new CategorieService();
                                                         for (Categorie c : cs.findAll()) {
+                                                            
                                                     %>
                                                     <option value="<%= c.getId()%>"><%= c.getNom()%></option>
                                                     <%}%>
@@ -363,7 +348,7 @@
                                             </div>
                                             <button type="submit" class="btn btn-primary mr-2">Submit</button>
                                             <button class="btn btn-light">Cancel</button>
-                                            
+
                                         </form>
                                     </div>
                                 </div>
@@ -371,7 +356,7 @@
                             <div class="col-lg-6 grid-margin stretch-card">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title">Liste des Sous-catégories :</h4>
+                                        <h4 class="card-title">Liste des catégories :</h4>
                                         <div class="table-responsive">
                                             <table class="table">
                                                 <thead>
@@ -381,19 +366,25 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <% 
-                                                       Categorie cat= new Categorie();
-                                                       if(cat.getCategorie()!=null){
-                                                        for(Categorie c: cs.findCateg(cat.getCategorie())){ 
+                                                    <%
+                                                            for (Categorie c : cs.findAll()) {
+                                                                    
                                                     %>
                                                     <tr>
                                                         <td><%= c.getNom()%></td>
+                                                        <% if(c.getCategorie()==null){    
+                                                        %>
+                                                        <td>principale</td>
+                                                        <%
+                                                        }
+                                                        else{
+                                                        %>
                                                         <td><%= c.getCategorie().getNom()%> </td>
+                                                        <%}%>
                                                     </tr>
-                                                    <%}}%>
+                                                    <%}%>
                                                 </tbody>
                                             </table>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

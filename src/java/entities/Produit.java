@@ -5,7 +5,8 @@
  */
 package entities;
 
-import java.sql.Blob;
+
+
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,7 +26,7 @@ public class Produit implements Serializable{
     private String nom, designation, description;
     private Double prix;
     private int unite;
-    private Blob image;
+    private byte[] image;
     @ManyToOne
     private Marque marque;
     @ManyToOne
@@ -34,7 +35,7 @@ public class Produit implements Serializable{
     public Produit() {
     }
 
-    public Produit(String nom, String designation, String description, Double prix, int unite, Blob image, Marque marque, Categorie categorie) {
+    public Produit(String nom, String designation, String description, Double prix, int unite, byte[] image, Marque marque, Categorie categorie) {
         this.nom = nom;
         this.designation = designation;
         this.description = description;
@@ -109,11 +110,11 @@ public class Produit implements Serializable{
         this.unite = unite;
     }
 
-    public Blob getImage() {
+    public byte[] getImage() {
         return image;
     }
 
-    public void setImage(Blob image) {
+    public void setImage(byte[] image) {
         this.image = image;
     }
     

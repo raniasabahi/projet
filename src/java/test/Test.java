@@ -6,35 +6,19 @@
 package test;
 
 import entities.Admin;
-import entities.Categorie;
-import entities.Client;
-import entities.Produit;
-import javax.swing.text.html.CSS;
-import org.hibernate.Hibernate;
 import service.AdminService;
-import service.CategorieService;
-import service.ClientService;
-import service.ProduitService;
 import util.HibernateUtil;
 
 /**
  *
- * @author a
+ * @author RANIA
  */
 public class Test {
-
     public static void main(String[] args) {
         //HibernateUtil.getSessionFactory().openSession();
-        /*AdminService as = new AdminService();
-         as.create(new Admin( "nouha", "nouha@gmail.com", "123"));*/
-
-        //cs.create(new Client("Soualime", "Ahmed", "0625748931", "Bd Massira", "soulami@gmail.com", "123"));
-        CategorieService cs = new CategorieService();
-        ProduitService ps = new ProduitService();
-        for (Produit c : ps.findByCateg(cs.findById(13))) {
-
-            System.out.println(c);
-        }
-
+        
+        
+        AdminService as = new AdminService();
+         as.create(new Admin("rania", "rania@gmail.com", "123"));
     }
 }

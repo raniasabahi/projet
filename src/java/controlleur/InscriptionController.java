@@ -6,6 +6,7 @@
 package controlleur;
 
 import entities.Admin;
+import entities.Client;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -13,7 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import service.AdminService;
+import service.ClientService;
 
 /**
  *
@@ -33,12 +34,15 @@ public class InscriptionController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       AdminService as=new AdminService();
-        String name = request.getParameter("name");
-         String email = request.getParameter("email");
-          String password = request.getParameter("passowrd");
-          as.create(new Admin(name ,email,password));
-      response.sendRedirect("Template/pages/samples/login.html");
+        ClientService cs = new ClientService();
+        String nom = request.getParameter("nom");
+        String prenom = request.getParameter("prenom");
+        String telephone = request.getParameter("telephone");
+        String addresse = request.getParameter("addresse");
+        String email = request.getParameter("email");
+        String password = request.getParameter("passowrd");
+        cs.create(new Client(nom, prenom, telephone, addresse, email, password));
+        response.sendRedirect("indexClient.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -50,11 +54,11 @@ public class InscriptionController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-   /* @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }*/
+     @Override
+     protected void doGet(HttpServletRequest request, HttpServletResponse response)
+     throws ServletException, IOException {
+     processRequest(request, response);
+     }
     /**
      * Handles the HTTP <code>POST</code> method.
      *
@@ -67,7 +71,7 @@ public class InscriptionController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-     
+
     }
 
     /**

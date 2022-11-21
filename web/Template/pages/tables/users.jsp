@@ -305,6 +305,65 @@
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
+              <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Table de clients</h4>
+                  <!--<p class="card-description">
+                    Add class <code>.table-bordered</code>
+                  </p>-->
+                  <div class="table-responsive pt-3">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>
+                          #
+                          </th>
+                          <th>
+                            nom complet
+                          </th>
+                          <th>
+                            Telephone
+                          </th>
+                          <th>
+                            Adress
+                          </th>
+                          <th>
+                            Email
+                          </th>
+                        </tr>
+                      </thead>
+                       
+                      <tbody>
+                         <%
+                              ClientService c= new ClientService();
+                              for (Client e: c.findAll()){
+                         %> 
+                        <tr> 
+                          <td>
+                              <%= e.getId()%>
+                          </td>
+                          <td>
+                            <%= e.getNom()%> <%= e.getPrenom()%>
+                          </td>
+                           <td>
+                           <%= e.getTelephone()%>
+                          </td>
+                          <td>
+                           <%= e.getAddresse()%>
+                          </td>
+                          <td>
+                           <%= e.getEmail()%>
+                          </td>
+                        </tr>
+                         <%}%>
+                  </tbody>
+                   
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="col-lg-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">

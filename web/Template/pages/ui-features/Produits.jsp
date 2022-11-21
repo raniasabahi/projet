@@ -416,12 +416,8 @@
                                                     %>
                                                     <tr>
                                                         <td class="py-1">
-                                                            <%
-                                                                ByteArrayInputStream input_stream = new ByteArrayInputStream(p.getImage().getBytes(1l, (int) p.getImage().length()));
-                                                                BufferedImage final_buffered_image = ImageIO.read(input_stream);
-                                                                
-                                                                     %>
-                                                            <img src="<%= final_buffered_image%>" alt="image"/>
+                                                           
+                                                            <img src="<%= p.getImage()%>" alt="image"/>
                                                         </td>
                                                         <td>
                                                             <%= p.getNom()%> 

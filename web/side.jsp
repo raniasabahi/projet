@@ -96,7 +96,7 @@
                             </a>
                             <div class="collapse" id="auth">
                                 <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item"> <a class="nav-link" href="Template/pages/samples/login.html"> Login </a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="Template/pages/samples/login.jsp"> Login </a></li>
                                     <li class="nav-item"> <a class="nav-link" href="Template/pages/samples/register.html"> Register </a></li>
                                 </ul>
                             </div>

@@ -388,6 +388,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </div>
 
                             <div class="col-md-8 grid-margin stretch-card">
                                 <div class="card">
@@ -710,8 +711,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        
                     </div>
+                    
                     <!-- content-wrapper ends -->
                     <!-- partial:../../partials/_footer.html -->
                     <footer class="footer">

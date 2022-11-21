@@ -1,14 +1,14 @@
- <%-- 
+<%@page import="service.AdminService"%>
+<%-- 
     Document   : index
     Created on : 17 nov. 2022, 18:42:19
     Author     : RANIA
 --%>
 
 <%
-    if (session.getAttribute("name")==null){
-    response.sendRedirect("Template/pages/samples/login.html");
-    }
-
+    /* if (session.getAttribute("username")==null){
+     response.sendRedirect("indexClient.jsp");
+     }*/
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html lang="en">
@@ -17,7 +17,7 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Skydash Admin</title>
+        <title>Fashion NR Admin</title>
         <!-- plugins:css -->
         <link rel="stylesheet" href="Template/vendors/feather/feather.css">
         <link rel="stylesheet" href="Template/vendors/ti-icons/css/themify-icons.css">

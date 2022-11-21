@@ -336,7 +336,7 @@
                                 </div>
                             </div>
 
-                            <div>
+                            
                                 <div class="col-lg-12 grid-margin">
 
                                     <div class="card">
@@ -469,8 +469,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div>
+                            
+                            
                                 <div class="col-md-6 grid-margin stretch-card">
                                     <div class="card">
                                         <div class="card-body">
@@ -861,7 +861,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    
 
                     <!-- content-wrapper ends -->
                     <!-- partial:../../partials/_footer.html -->

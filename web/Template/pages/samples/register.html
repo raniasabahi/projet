@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -31,9 +32,18 @@
               </div>
               <h4>New here?</h4>
               <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
-              <form  method="Post"  action="/InscriptionController" class="pt-3" >
+              <form  action="http://localhost:8080/projet2/InscriptionController" method="POST"   class="pt-3" >
                 <div class="form-group">
-                    <input type="text" name="name" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Username">
+                    <input type="text" name="nom" class="form-control form-control-lg" id="exampleInputNom" placeholder="Nom">
+                </div>
+                   <div class="form-group">
+                    <input type="text" name="prenom" class="form-control form-control-lg" id="exampleInputPrenom" placeholder="Prenom">
+                </div>
+                  <div class="form-group">
+                    <input type="text" name="telephone" class="form-control form-control-lg" id="exampleInputTelephone" placeholder="Telephone">
+                </div>
+                  <div class="form-group">
+                    <input type="text" name="addresse" class="form-control form-control-lg" id="exampleInputAdresse" placeholder="Adresse">
                 </div>
                 <div class="form-group">
                     <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email">
@@ -44,7 +54,7 @@
                 <div class="mb-4">
                   <div class="form-check">
                     <label class="form-check-label text-muted">
-                      <input type="checkbox" class="form-check-input">
+                        <input type="checkbox"  class="form-check-input" id ="terms" required>
                       I agree to all Terms & Conditions
                     </label>
                   </div>
@@ -54,7 +64,7 @@
                   <!--<a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../../index.jsp">SIGN UP</a>-->
                 </div>
                 <div class="text-center mt-4 font-weight-light">
-                  Already have an account? <a href="login.html" class="text-primary">Login</a>
+                  Already have an account? <a href="login.jsp" class="text-primary">Login</a>
                 </div>
               </form>
             </div>
@@ -81,3 +91,4 @@
 </body>
 
 </html>
+

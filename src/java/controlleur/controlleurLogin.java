@@ -37,17 +37,7 @@ public class controlleurLogin extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-     /*AdminService as=new AdminService();
-        String name = request.getParameter("name");
-         String email = request.getParameter("email");
-          String password = request.getParameter("passowrd");
-          as.create(new Admin(name ,email,password));
-      response.sendRedirect("Template/pages/samples/login.html");
-    
-       */
-        }
+  
     
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -62,7 +52,7 @@ public class controlleurLogin extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        response.sendRedirect("index.jsp");
     }
 
     /**
@@ -76,7 +66,6 @@ public class controlleurLogin extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
         try {
             authenticate(request, response);
         } catch (Exception e) {
@@ -90,13 +79,15 @@ public class controlleurLogin extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        if (loginDao.validate(email, password)) {
+        if (loginDao.validate(email, password)== true) {
             RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
             
             dispatcher.forward(request, response);
         } else {
             throw new Exception("Login not successful..");
-        }}
+        }
+
+ }
     /**
      * Returns a short description of the servlet.
      *

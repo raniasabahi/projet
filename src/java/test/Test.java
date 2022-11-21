@@ -20,13 +20,14 @@ import util.HibernateUtil;
 public class Test {
     public static void main(String[] args) {
         HibernateUtil.getSessionFactory().openSession();
-        /*AdminService as = new AdminService();
-        as.create(new Admin( "nouha", "nouha@gmail.com", "123"));*/
-        ClientService cs=new ClientService();
+        AdminService as = new AdminService();
+       /* as.create(new Admin( "nouha", "nouha@gmail.com", "0000"));*/
+        /*ClientService cs=new ClientService();
         cs.create(new Client("Soualime", "Ahmed", "0625748931", "Bd Massira", "soulami@gmail.com", "123"));
     
     for (Client e: cs.findAll()){
    
             System.out.println(e.getPrenom() + e.getNom());
-    }
+    }*/
+        as.validate("nouha@gmail.com", "0000");
     }}

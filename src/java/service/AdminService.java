@@ -7,6 +7,7 @@ package service;
 
 import dao.IDao;
 import entities.Admin;
+import entities.User;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -112,7 +113,32 @@ public class AdminService implements IDao<Admin> {
         }
         return admins;
     }
-    
+     public boolean validate(String email, String password) {
+
+        Transaction tx = null;
+         User user = null;
+        Session session = null;
+        try  {
+            session = HibernateUtil.getSessionFactory().openSession();
+            // start a transaction
+            tx = session.beginTransaction();
+            // get an user object
+            user = (User) session.createQuery("FROM User U WHERE U.email = :email").setParameter("email", email)
+                .uniqueResult();
+
+            if (user != null && user.getPassword().equals(password)) {
+                return true;
+            }
+            // commit transaction
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx != null) {
+                tx.rollback();
+            }} finally {
+            session.close();
+        }
+        return false;
+    }
     
     
 }

@@ -5,13 +5,16 @@
  */
 package controlleur;
 
+import entities.Admin;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import service.AdminService;
 
 /**
  *
@@ -19,6 +22,11 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "controlleurLogin", urlPatterns = {"/controlleurLogin"})
 public class controlleurLogin extends HttpServlet {
+     private AdminService loginDao;
+
+    public void init() {
+        loginDao = new AdminService();
+    }
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,9 +39,14 @@ public class controlleurLogin extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+     /*AdminService as=new AdminService();
+        String name = request.getParameter("name");
+         String email = request.getParameter("email");
+          String password = request.getParameter("passowrd");
+          as.create(new Admin(name ,email,password));
+      response.sendRedirect("Template/pages/samples/login.html");
     
-       
+       */
         }
     
 
@@ -64,8 +77,26 @@ public class controlleurLogin extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        try {
+            authenticate(request, response);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
     }
+ private void authenticate(HttpServletRequest request, HttpServletResponse response)
+    throws Exception {
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
 
+        if (loginDao.validate(email, password)) {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+            
+            dispatcher.forward(request, response);
+        } else {
+            throw new Exception("Login not successful..");
+        }}
     /**
      * Returns a short description of the servlet.
      *

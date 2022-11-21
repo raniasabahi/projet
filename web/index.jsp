@@ -1,14 +1,18 @@
-<%-- 
+<%--
     Document   : index
     Created on : 17 nov. 2022, 18:42:19
     Author     : RANIA
 --%>
 
-<%
-    //if (session.getAttribute("name")==null){
-    //response.sendRedirect("Template/pages/samples/login.html");
-    //}
 
+
+<%@page import="entities.Admin"%>
+<%
+ if (session.getAttribute("name")==null){
+    response.sendRedirect("Template/pages/samples/login.html");
+    }else {
+           response.sendRedirect("Template/pages/samples/register.html"); 
+        }
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html lang="en">
@@ -243,4 +247,4 @@
     </body>
 
 </html>
-
+<%}%>

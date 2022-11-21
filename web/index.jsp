@@ -5,9 +5,9 @@
 --%>
 
 <%
-    //if (session.getAttribute("name")==null){
-    //response.sendRedirect("Template/pages/samples/login.html");
-    //}
+    if (session.getAttribute("name")==null){
+    response.sendRedirect("Template/pages/samples/login.html");
+    }
 
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

@@ -6,11 +6,15 @@
 package test;
 
 import entities.Admin;
+import entities.Categorie;
 import entities.Client;
+import entities.Produit;
 import javax.swing.text.html.CSS;
 import org.hibernate.Hibernate;
 import service.AdminService;
+import service.CategorieService;
 import service.ClientService;
+import service.ProduitService;
 import util.HibernateUtil;
 
 /**
@@ -18,7 +22,9 @@ import util.HibernateUtil;
  * @author a
  */
 public class Test {
+
     public static void main(String[] args) {
+
         HibernateUtil.getSessionFactory().openSession();
         AdminService as = new AdminService();
        /* as.create(new Admin( "nouha", "nouha@gmail.com", "0000"));*/
@@ -31,3 +37,7 @@ public class Test {
     }*/
         as.validate("nouha@gmail.com", "0000");
     }}
+
+
+
+

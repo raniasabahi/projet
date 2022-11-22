@@ -318,7 +318,7 @@
                                     <div class="card-body">
                                         <h4 class="card-title">Ajout d'un produit :</h4>
 
-                                        <form method="GET" action="http://localhost:8080/projet2/ProduitControlleur"  class="forms-sample">
+                                        <form method="GET" action="../../../ProduitControlleur"  class="forms-sample">
                                             <div class="form-group">
                                                 <label for="exampleInputName1">Nom</label>
                                                 <input type="text" name="nom" class="form-control" id="exampleInputName1" placeholder="Nom">

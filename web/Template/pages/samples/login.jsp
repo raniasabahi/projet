@@ -38,7 +38,7 @@
               </div>
               <h4>Hello! let's get started</h4>
               <h6 class="font-weight-light">Sign in to continue.</h6>
-              <form method="POST" action="http://localhost:8080/projet2/controlleurLogin" class="pt-3">
+              <form method="POST" action="../../../controlleurLogin" class="pt-3">
                 <div class="form-group">
                     <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="email">
                 </div>

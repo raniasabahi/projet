@@ -310,7 +310,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">Ajout d'une catégorie</h4>
-                                        <form method="GET" action="http://localhost:8080/projet2/Categorie" class="forms-sample">
+                                        <form method="GET" action="../../../Categorie" class="forms-sample">
 
                                             <div class="form-group">
                                                 <label for="exampleInputUsername1">nom</label>

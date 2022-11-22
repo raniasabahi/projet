@@ -17,7 +17,7 @@ import util.HibernateUtil;
  */
 public class Test {
     public static void main(String[] args) {
-        //HibernateUtil.getSessionFactory().openSession();
+        HibernateUtil.getSessionFactory().openSession();
         
         ClientService c = new ClientService();
         AdminService as = new AdminService();

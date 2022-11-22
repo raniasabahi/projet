@@ -116,17 +116,17 @@ public class AdminService implements IDao<Admin> {
      public boolean validate(String email, String password) {
 
         Transaction tx = null;
-         User user = null;
+        Admin admin = null;
         Session session = null;
         try  {
             session = HibernateUtil.getSessionFactory().openSession();
             // start a transaction
             tx = session.beginTransaction();
             // get an user object
-            user = (User) session.createQuery("FROM User U WHERE U.email = :email").setParameter("email", email)
+            admin = (Admin) session.createQuery("FROM Admin A WHERE A.email = :email").setParameter("email", email)
                 .uniqueResult();
 
-            if (user != null && user.getPassword().equals(password)) {
+            if (admin != null && admin.getPassword().equals(password)) {
                 return true;
             }
             // commit transaction

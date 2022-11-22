@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import service.AdminService;
+import service.ClientService;
 
 /**
  *
@@ -23,9 +24,11 @@ import service.AdminService;
 @WebServlet(name = "controlleurLogin", urlPatterns = {"/controlleurLogin"})
 public class controlleurLogin extends HttpServlet {
      private AdminService loginDao;
+     private ClientService loginClient;
 
     public void init() {
         loginDao = new AdminService();
+        loginClient = new ClientService();
     }
 
     /**
@@ -81,10 +84,15 @@ public class controlleurLogin extends HttpServlet {
 
         if (loginDao.validate(email, password)== true) {
             RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
-            
             dispatcher.forward(request, response);
-        } else {
-            throw new Exception("Login not successful..");
+        }else if(loginClient.validate(email, password)==true){
+            RequestDispatcher dispatcher = request.getRequestDispatcher("indexClient.jsp");
+            dispatcher.forward(request, response);
+        }
+        
+        else {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("./Template/pages/samples/login.jsp");
+            dispatcher.forward(request, response);
         }
 
  }

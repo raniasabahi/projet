@@ -7,6 +7,7 @@ package service;
 
 import dao.IDao;
 import entities.Client;
+import entities.User;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -111,6 +112,32 @@ public class ClientService implements IDao<Client> {
             session.close();
         }
         return clients;
+    }
+    public boolean validate(String email, String password) {
+
+        Transaction tx = null;
+        Client client = null;
+        Session session = null;
+        try  {
+            session = HibernateUtil.getSessionFactory().openSession();
+            // start a transaction
+            tx = session.beginTransaction();
+            // get an user object
+            client = (Client) session.createQuery("FROM Client C WHERE C.email = :email").setParameter("email", email)
+                .uniqueResult();
+
+            if (client != null && client.getPassword().equals(password)) {
+                return true;
+            }
+            // commit transaction
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx != null) {
+                tx.rollback();
+            }} finally {
+            session.close();
+        }
+        return false;
     }
     
 }

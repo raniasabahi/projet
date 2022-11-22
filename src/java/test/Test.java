@@ -6,7 +6,9 @@
 package test;
 
 import entities.Admin;
+import entities.Client;
 import service.AdminService;
+import service.ClientService;
 import util.HibernateUtil;
 
 /**
@@ -17,8 +19,11 @@ public class Test {
     public static void main(String[] args) {
         //HibernateUtil.getSessionFactory().openSession();
         
-        
+        ClientService c = new ClientService();
         AdminService as = new AdminService();
-         as.create(new Admin("rania", "rania@gmail.com", "123"));
+         //as.create(new Admin("rania", "rania@gmail.com", "123"));
+         c.create(new Client("moustaghit", "nouhaila", "556678", "667889", "Nouhaila@gmail.com", "234"));
+         
+       
     }
 }

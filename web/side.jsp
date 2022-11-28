@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Admin Fashion NR</title>
     </head>
     <body>
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
@@ -17,7 +17,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.jsp">
                                 <i class="icon-grid menu-icon"></i>
-                                <span class="menu-title">Dashboard</span>
+                                <span class="menu-title">Tableau de bord</span>
                             </a>
                         </li>
                         <li class="nav-item">

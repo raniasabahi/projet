@@ -14,7 +14,7 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Skydash Admin</title>
+        <title>Fashion NR marque</title>
         <!-- plugins:css -->
         <link rel="stylesheet" href="../../vendors/feather/feather.css">
         <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
@@ -25,7 +25,7 @@
         <!-- inject:css -->
         <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
         <!-- endinject -->
-        <link rel="shortcut icon" href="../../images/favicon.png" />
+        <link rel="shortcut icon" href="../../images/nr1.png" />
     </head>
 
     <body>
@@ -33,8 +33,8 @@
             <!-- partial:../../partials/_navbar.html -->
             <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
                 <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                    <a class="navbar-brand brand-logo mr-5" href="../../../index.jsp"><img src="../../images/logo.svg" class="mr-2" alt="logo"/></a>
-                    <a class="navbar-brand brand-logo-mini" href="../../../index.jsp"><img src="../../images/logo-mini.svg" alt="logo"/></a>
+                    <a class="navbar-brand brand-logo mr-5" href="../../../index.jsp"><img src="../../images/nr1.png" class="mr-2" alt="logo"/></a>
+                    <a class="navbar-brand brand-logo-mini" href="../../../index.jsp"><img src="../../images/NR.jpg" alt="logo"/></a>
                 </div>
                 <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
                     <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -102,9 +102,9 @@
                             </div>
                         </li>
                         <li class="nav-item nav-profile dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                           <!-- <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
                                 <img src="../../images/faces/face28.jpg" alt="profile"/>
-                            </a>
+                            </a>-->
                             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
                                 <a class="dropdown-item">
                                     <i class="ti-settings text-primary"></i>
@@ -323,15 +323,33 @@
                             <div class="col-md-4 grid-margin grid-margin-md-0 stretch-card">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title">Liste des catégories</h4>
-                                       <ul class="list-ticked">
-                                            <%
+                                        <h4 class="card-title">Liste des Marques</h4>
+                                          <form method="GET" action="../../../DeleteMarqueControlleur" class="forms-sample">
+                                      
+                                        <table class="table table-bordered">
+                                                 <%
                                                 MarqueService cs = new MarqueService();
                                                 for (Marque c : cs.findAll()) {
                                             %>
-                                            <li><%= c.getNom()%></li>
+                                                <thead>
+                                                    <tr>
+                                                        <th>Nom</th>
+                                                        <th>Supprimer</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><%= c.getNom()%></td>
+                                                 
+                                                        <td><a href="../../../DeleteMarqueControlleur?id=<%=c.getId()%>"> Supprimer</a></td>
+                                                    </tr>
+                                                </tbody>
                                                 <%}%>
-                                        </ul> 
+                                            </table>
+
+                                 
+                                     
+                                          </form>
                                     </div>
                                 </div>
                             </div>

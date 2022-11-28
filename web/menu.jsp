@@ -4,6 +4,9 @@
     Author     : RANIA
 --%>
 
+<%@page import="service.ProduitService"%>
+<%@page import="service.CommandeService"%>
+<%@page import="service.ClientService"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,6 +15,11 @@
         <title>Admin Fashion NR</title>
     </head>
     <body>
+        <%
+        ClientService cs = new ClientService();
+        CommandeService css = new CommandeService();
+        ProduitService ps = new ProduitService();
+        %>
         <div class="main-panel">
                     <div class="content-wrapper">
                         <div class="row">
@@ -64,7 +72,7 @@
                                         <div class="card card-tale">
                                             <div class="card-body">
                                                 <p class="mb-4">Espace clients</p>
-                                                <p class="fs-30 mb-2">nombre de clients : 0</p>
+                                                <p class="fs-30 mb-2">Nombre de clients : <%=cs.nbrClient()%> </p>
                                              
                                             </div>
                                         </div>
@@ -73,7 +81,7 @@
                                         <div class="card card-dark-blue">
                                             <div class="card-body">
                                                 <p class="mb-4">Espace commandes</p>
-                                                <p class="fs-30 mb-2">nombre de commandes : 0 </p>
+                                                <p class="fs-30 mb-2">Nombre de commandes :<%=css.nbrCommande()%> </p>
                                               
                                             </div>
                                         </div>
@@ -84,7 +92,7 @@
                                         <div class="card card-light-blue">
                                             <div class="card-body">
                                                 <p class="mb-4">Espace Produits</p>
-                                                <p class="fs-30 mb-2">Nombre de produits</p>
+                                                <p class="fs-30 mb-2">Nombre de produits : <%=ps.nbrProduit()%> </p>
                                               
                                             </div>
                                         </div>

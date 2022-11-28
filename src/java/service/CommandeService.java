@@ -151,4 +151,13 @@ public class CommandeService implements IDao<Commande>{
         return commandes;
         
     }
+    public int nbrCommande(){
+        CommandeService cs = new CommandeService();
+        int nbr = 0;
+        for(Commande c: cs.findAll()){
+            
+            nbr++;
+        }
+        return nbr;
+    }
 }

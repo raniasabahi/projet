@@ -150,5 +150,14 @@ public class ProduitService implements IDao<Produit> {
         return produits;
         
     }
+        public int nbrProduit(){
+        ProduitService ps = new ProduitService();
+        int nbr = 0;
+        for(Produit p: ps.findAll()){
+            
+            nbr++;
+        }
+        return nbr;
+    }
 }
 

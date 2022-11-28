@@ -139,5 +139,13 @@ public class ClientService implements IDao<Client> {
         }
         return false;
     }
-    
+    public int nbrClient(){
+        ClientService cs = new ClientService();
+        int nbr = 0;
+        for(Client c: cs.findAll()){
+            
+            nbr++;
+        }
+        return nbr;
+    }
 }

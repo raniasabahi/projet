@@ -108,7 +108,7 @@ public class CategorieService implements IDao<Categorie>{
             if(tx != null)
                 tx.rollback();
         } finally {
-            session.close();
+            
         }
         return categories;
     }
@@ -119,7 +119,7 @@ public class CategorieService implements IDao<Categorie>{
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            categories  =  session.createQuery("from Categorie c where c.categorie =:categorie").setParameter("categorie", sc.getId()).list();
+            categories  =  session.createQuery("from Categorie c where c.categorie =:categorie").setParameter("categorie", sc).list();
             tx.commit();
         } catch (HibernateException e) {
             if(tx != null)

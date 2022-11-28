@@ -3,33 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ajout;
+package controlleur;
 
-import entities.Categorie;
-import entities.Marque;
-import entities.Produit;
+import entities.Panier;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Blob;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.sql.rowset.serial.SerialBlob;
-import service.CategorieService;
-import service.MarqueService;
-import service.ProduitService;
 
 /**
  *
  * @author RANIA
  */
-@WebServlet(name = "ProduitControlleur", urlPatterns = {"/ProduitControlleur"})
-public class ProduitControlleur extends HttpServlet {
+@WebServlet(name = "gestionPanier", urlPatterns = {"/gestionPanier"})
+public class gestionPanier extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,27 +32,10 @@ public class ProduitControlleur extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException {
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            ProduitService ps = new ProduitService();
-            MarqueService ms = new MarqueService();
-            CategorieService cs = new CategorieService();
-            
-            String nom = request.getParameter("nom");
-            String designation = request.getParameter("designation");
-            String description = request.getParameter("description");
-            Double prix = Double.parseDouble(request.getParameter("prix"));
-            int unite = Integer.parseInt(request.getParameter("unite"));
-            String image = request.getParameter("image");
-           
-            Marque marque= ms.findById(Integer.parseInt(request.getParameter("marque")));
-            Categorie categorie = cs.findById(Integer.parseInt(request.getParameter("categorie")));
-            
-            ps.create(new Produit(nom, designation, description, prix, unite, image, marque, categorie));
-            response.sendRedirect("./Template/pages/ui-features/Produits.jsp");
-        }
+        
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -76,11 +50,34 @@ public class ProduitControlleur extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(ProduitControlleur.class.getName()).log(Level.SEVERE, null, ex);
+        String action = request.getParameter("action");
+        int id = Integer.parseInt(request.getParameter("id"));
+        
+        Panier panier =null;
+        if(request.getSession().getAttribute("panier")!= null){
+            panier = (Panier)request.getSession().getAttribute("panier");
+        }else{
+            panier = new Panier();
         }
+         if (action.equals("ajouter")){
+             int qte = Integer.parseInt(request.getParameter("qte"));
+             panier.addItem(id, qte);
+         }   
+       if (action.equals("augqte")){
+           panier.augmenterQte(id);
+           
+       }
+       if (action.equals("dimqte")){
+           panier.diminuerQte(id);
+           
+       }
+        
+        
+        
+        request.getSession().setAttribute("panier",panier);
+        
+        RequestDispatcher dispatcher =request.getRequestDispatcher("cart.jsp");
+        dispatcher.forward(request, response);
     }
 
     /**
@@ -94,11 +91,7 @@ public class ProduitControlleur extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(ProduitControlleur.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**

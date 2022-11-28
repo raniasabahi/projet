@@ -26,7 +26,7 @@ public class Produit implements Serializable{
     private String nom, designation, description;
     private Double prix;
     private int unite;
-    private byte[] image;
+    private String image;
     @ManyToOne
     private Marque marque;
     @ManyToOne
@@ -35,7 +35,7 @@ public class Produit implements Serializable{
     public Produit() {
     }
 
-    public Produit(String nom, String designation, String description, Double prix, int unite, byte[] image, Marque marque, Categorie categorie) {
+    public Produit(String nom, String designation, String description, Double prix, int unite, String image, Marque marque, Categorie categorie) {
         this.nom = nom;
         this.designation = designation;
         this.description = description;
@@ -110,11 +110,11 @@ public class Produit implements Serializable{
         this.unite = unite;
     }
 
-    public byte[] getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(String image) {
         this.image = image;
     }
     

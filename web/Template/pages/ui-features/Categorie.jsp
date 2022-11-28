@@ -340,10 +340,11 @@
                                                     <%
                                                       CategorieService cs = new CategorieService();
                                                         for (Categorie c : cs.findAll()) {
+                                                            if(c.getCategorie()==null){
                                                             
                                                     %>
                                                     <option value="<%= c.getId()%>"><%= c.getNom()%></option>
-                                                    <%}%>
+                                                    <%}}%>
                                                 </select>
                                             </div>
                                             <button type="submit" class="btn btn-primary mr-2">Submit</button>

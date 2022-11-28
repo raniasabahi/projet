@@ -31,7 +31,7 @@
         <!-- inject:css -->
         <link rel="stylesheet" href="Template/css/vertical-layout-light/style.css">
         <!-- endinject -->
-        <link rel="shortcut icon" href="Template/images/favicon.png" />
+        <link rel="shortcut icon" href="Template/images/nr1.png" />
     </head>
     <body>
         <div class="container-scroller">

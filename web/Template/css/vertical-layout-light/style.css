@@ -11083,35 +11083,35 @@ fieldset:disabled .wizard > .actions a,
 
 .btn-primary, .wizard > .actions a {
   color: #fff;
-  background-color: #4B49AC;
-  border-color: #4B49AC;
+  background-color: #d27979;
+  border-color: #d27979;
 }
 
 .btn-primary:hover, .wizard > .actions a:hover {
   color: #fff;
-  background-color: #3f3e91;
-  border-color: #3b3a88;
+  background-color: #c65353;
+  border-color: #c65353;
 }
 
 .btn-primary:focus, .wizard > .actions a:focus, .btn-primary.focus, .wizard > .actions a.focus {
   color: #fff;
-  background-color: #3f3e91;
-  border-color: #3b3a88;
+  background-color: #c65353;
+  border-color: #c65353;
   box-shadow: 0 0 0 0.2rem rgba(102, 100, 184, 0.5);
 }
 
 .btn-primary.disabled, .wizard > .actions a.disabled, .btn-primary:disabled, .wizard > .actions a:disabled {
   color: #fff;
-  background-color: #4B49AC;
-  border-color: #4B49AC;
+  background-color: #d27979;
+  border-color: #d27979;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active, .wizard > .actions a:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .wizard > .actions a:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle,
 .wizard > .actions .show > a.dropdown-toggle {
   color: #fff;
-  background-color: #3b3a88;
-  border-color: #37367f;
+  background-color: #c65353;
+  border-color: #c65353;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active:focus, .wizard > .actions a:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .wizard > .actions a:not(:disabled):not(.disabled).active:focus,
@@ -20197,13 +20197,13 @@ code {
 }
 
 .card-people img {
-  border-radius: 20px;
-  width: 100%;
+  border-radius: 10px;
+  width:80%;
 }
 
 .card-people .weather-info {
   position: absolute;
-  top: 30px;
+  top: 20px;
   right: 24px;
 }
 
@@ -20212,7 +20212,7 @@ code {
 }
 
 .card-people .weather-info .location {
-  font-size: 20px;
+  font-size: 100px;
   margin-bottom: 0;
 }
 
@@ -20442,7 +20442,7 @@ code {
 
 .accordion.accordion-filled .card .card-body {
   padding: 0 2rem 2rem 2rem;
-  background: #248AFD;
+  background: #df9f9f;
   color: #ffffff;
 }
 
@@ -21984,7 +21984,7 @@ code {
 }
 
 .card.tale-bg {
-  background: #DAE7FF;
+  background: transparent;
 }
 
 .card.transparent {
@@ -22077,30 +22077,30 @@ code {
 }
 
 .card.card-tale {
-  background: #7DA0FA;
+  background: #d98c8c;
   color: #ffffff;
 }
 
 .card.card-tale:hover {
-  background: #96b2fb;
+  background: #df9f9f;
 }
 
 .card.card-dark-blue {
-  background: #4747A1;
-  color: #ffffff;
+  background: #ffcccc;
+  color: #000000;
 }
 
 .card.card-dark-blue:hover {
-  background: #5050b2;
+  background: #ffb3b3;
 }
 
 .card.card-light-blue {
-  background: #7978E9;
+  background: #b30000;
   color: #ffffff;
 }
 
 .card.card-light-blue:hover {
-  background: #8f8eed;
+  background: #e60000;
 }
 
 .card.card-light-danger {
@@ -28114,7 +28114,7 @@ div.tagsinput span.tag a {
 }
 
 .wizard > .steps .current a:hover {
-  background: #4B49AC;
+  background: #cc6666;
   color: #ffffff;
   cursor: default;
 }
@@ -28381,7 +28381,7 @@ div.tagsinput span.tag a {
 }
 
 .auth .brand-logo img {
-  width: 150px;
+  width: 300px;
 }
 
 .auth form .form-group {
@@ -28591,7 +28591,7 @@ div.tagsinput span.tag a {
 }
 
 .sidebar .nav .nav-item.active > .nav-link {
-  background: #4B49AC;
+  background: #cc6666;
   position: relative;
 }
 
@@ -28622,7 +28622,7 @@ div.tagsinput span.tag a {
 }
 
 .sidebar .nav:not(.sub-menu) > .nav-item:hover > .nav-link, .sidebar .nav:not(.sub-menu) > .nav-item:hover[aria-expanded="true"] {
-  background: #4B49AC;
+  background: #cc6666;
   color: #fff;
 }
 
@@ -28632,12 +28632,12 @@ div.tagsinput span.tag a {
 
 .sidebar .nav:not(.sub-menu) > .nav-item > .nav-link[aria-expanded="true"] {
   border-radius: 8px 8px 0 0;
-  background: #4B49AC;
+  background: #cc6666;
   color: #fff;
 }
 
 .sidebar .nav:not(.sub-menu) > .nav-item.active {
-  background: #4B49AC;
+  background: #cc6666;
 }
 
 .sidebar .nav.sub-menu {
@@ -28645,7 +28645,7 @@ div.tagsinput span.tag a {
   margin-top: 0;
   list-style: none;
   padding: 0.25rem 0 0 3.07rem;
-  background: #4B49AC;
+  background: #cc6666;
   padding-bottom: 12px;
 }
 
@@ -28711,7 +28711,7 @@ div.tagsinput span.tag a {
 }
 
 .sidebar-dark .sidebar .nav .nav-item.active > .nav-link {
-  background: #4B49AC;
+  background: #cc6666;
 }
 
 .sidebar-dark .sidebar .nav .nav-item.active > .nav-link .menu-title,
@@ -28720,7 +28720,7 @@ div.tagsinput span.tag a {
 }
 
 .sidebar-dark .sidebar .nav:not(.sub-menu) > .nav-item:hover > .nav-link {
-  background: #4B49AC;
+  background: #cc6666;
   color: #fff;
 }
 
@@ -28803,7 +28803,7 @@ div.tagsinput span.tag a {
 }
 
 .navbar .navbar-brand-wrapper .navbar-brand {
-  color: #27367f;
+  color: #c65353;
   font-size: 1.5rem;
   margin-right: 0;
   padding: .25rem 0;

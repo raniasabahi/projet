@@ -17,6 +17,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import service.AdminService;
 import service.ClientService;
 
 /**
@@ -38,6 +39,7 @@ public class InscriptionController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         ClientService cs = new ClientService();
+       
         String nom = request.getParameter("nom");
         String prenom = request.getParameter("prenom");
         String telephone = request.getParameter("telephone");
@@ -45,6 +47,7 @@ public class InscriptionController extends HttpServlet {
         String email = request.getParameter("email");
         String password = MD5(request.getParameter("passowrd"));
         cs.create(new Client(nom, prenom, telephone, addresse, email, password));
+       
         response.sendRedirect("indexClient.jsp");
     }
 

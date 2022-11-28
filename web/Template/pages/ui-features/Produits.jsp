@@ -385,6 +385,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">Liste des produits :</h4>
+                                          <form method="GET" action="../../../DeleteProduitControlleur" class="forms-sample">
                                         <div class="table-responsive">
                                             <table class="table table-striped">
                                                 <thead>
@@ -406,6 +407,9 @@
                                                         </th>
                                                         <th>
                                                             Catégorie
+                                                        </th>
+                                                        <th>
+                                                            Supprimer
                                                         </th>
                                                     </tr>
                                                 </thead>
@@ -434,12 +438,14 @@
                                                         <td>
                                                             <%= p.getMarque().getNom()%>
                                                         </td>
+                                                       <td><a href="../../../DeleteProduitControlleur?id=<%=p.getId()%>"> Supprimer</a></td>
                                                     </tr>
                                                     <%}%>
 
                                                 </tbody>
                                             </table>
                                         </div>
+                                          </form>
                                     </div>
                                 </div>
                             </div>                    

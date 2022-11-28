@@ -4,6 +4,8 @@
     Author     : RANIA
 --%>
 
+<%@page import="entities.Commande"%>
+<%@page import="service.CommandeService"%>
 <%@page import="entities.Client"%>
 <%@page import="service.ClientService"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -361,6 +363,73 @@
                    
                     </table>
                   </div>
+                </div>
+              </div>
+            </div>
+                   <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+              <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Table de commande</h4>
+                   <form method="GET" action="../../../DeleteUserControlleur" class="forms-sample">
+                  <!--<p class="card-description">
+                    Add class <code>.table-bordered</code>
+                  </p>-->
+                  <div class="table-responsive pt-3">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>
+                          #
+                          </th>
+                          <th>
+                           Client
+                          </th>
+                          <th>
+                           DateCommande
+                          </th>
+                          <th>
+                            PrixTotale
+                          </th>
+                          <th>
+                          Facture
+                          </th>
+                          <th>
+                         Supprimer
+                          </th>
+                        </tr>
+                      </thead>
+                       
+                      <tbody>
+                         <%
+                             CommandeService cm= new CommandeService();
+                              for (Commande e: cm.findAll()){
+                         %> 
+                        <tr> 
+                          <td>
+                              <%= e.getId()%>
+                          </td>
+                          <td>
+                            <%= e.getClient().getNom()%> <%= e.getClient().getPrenom()%>
+                          </td>
+                           <td>
+                           <%= e.getDate()%>
+                          </td>
+                          <td>
+                             
+                          </td>
+                          <td>0
+                          </td>
+                            <td><a href="../../../DeleteUserControlleur?id=<%=e.getId()%>">Cancel</a></td>
+                        </tr>
+                         <%}%>
+                  </tbody>
+                   
+                    </table>
+                  </div>
+                   </form>
                 </div>
               </div>
             </div>

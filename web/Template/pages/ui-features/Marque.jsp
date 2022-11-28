@@ -323,15 +323,33 @@
                             <div class="col-md-4 grid-margin grid-margin-md-0 stretch-card">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title">Liste des catégories</h4>
-                                       <ul class="list-ticked">
-                                            <%
+                                        <h4 class="card-title">Liste des Marques</h4>
+                                          <form method="GET" action="../../../DeleteMarqueControlleur" class="forms-sample">
+                                      
+                                        <table class="table table-bordered">
+                                                 <%
                                                 MarqueService cs = new MarqueService();
                                                 for (Marque c : cs.findAll()) {
                                             %>
-                                            <li><%= c.getNom()%></li>
+                                                <thead>
+                                                    <tr>
+                                                        <th>Nom</th>
+                                                        <th>Supprimer</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><%= c.getNom()%></td>
+                                                 
+                                                        <td><a href="../../../DeleteMarqueControlleur?id=<%=c.getId()%>"> Supprimer</a></td>
+                                                    </tr>
+                                                </tbody>
                                                 <%}%>
-                                        </ul> 
+                                            </table>
+
+                                 
+                                     
+                                          </form>
                                     </div>
                                 </div>
                             </div>

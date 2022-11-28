@@ -327,7 +327,7 @@
                                     <div class="card-body">
                                         <h4 class="card-title">Ajout d'une sous catégorie :</h4>
 
-                                        <form method="GET" action="http://localhost:8080/projet2/SousCategorieControlleur" class="forms-sample">
+                                        <form method="GET" action="../../../SousCategorieControlleur" class="forms-sample">
                                             <div class="form-group row">
                                                 <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Nom</label>
                                                 <div class="col-sm-9">
@@ -357,19 +357,28 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">Liste des catégories :</h4>
+                                      
+                                         <form method="GET" action="../../../DeleteCategorieControlleur" class="forms-sample">
+                                              
                                         <div class="table-responsive">
                                             <table class="table">
                                                 <thead>
                                                     <tr>
                                                         <th>Nom</th>
                                                         <th>Catégorie</th>
+                                                         <th>supprimer </th>
+                                                        <th>editer</th>
                                                     </tr>
                                                 </thead>
+                                               
                                                 <tbody>
+                                              
                                                     <%
                                                             for (Categorie c : cs.findAll()) {
+                                                                
                                                                     
                                                     %>
+                                               
                                                     <tr>
                                                         <td><%= c.getNom()%></td>
                                                         <% if(c.getCategorie()==null){    
@@ -380,12 +389,21 @@
                                                         else{
                                                         %>
                                                         <td><%= c.getCategorie().getNom()%> </td>
+                                                     
                                                         <%}%>
-                                                    </tr>
+                                                       <!-- <td><input type="reset" id="reset" value="reset" name="reset" class="btn btn-warning" /></td>-->
+                                                      <td><a href="../../../DeleteCategorieControlleur?id=<%=c.getId()%>">Cancel</a> </td>
+                                                      <td><a href="../../../UpdateCategorieControlleur?id=<%=c.getId()%>">Edit</a> </td>
+                                                      </tr>
+                                                   
                                                     <%}%>
+                                                      
                                                 </tbody>
+                                              
                                             </table>
                                     </div>
+                                              </form>
+                                                 
                                 </div>
                             </div>
                             </div>

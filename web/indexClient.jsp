@@ -290,7 +290,7 @@
                 <div class="col-lg-4 col-md-6 pb-1">
                     <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                         <p class="text-right">15 Products</p>
-                        <a href="" class="cat-img position-relative overflow-hidden mb-3">
+                        <a href="shop.jsp" class="cat-img position-relative overflow-hidden mb-3">
                             <img class="img-fluid" src="templateClient/img/vetemets.jpg" alt="">
                         </a>
                         <h5 class="font-weight-semi-bold m-0">vêtements</h5>
@@ -299,19 +299,19 @@
                 <div class="col-lg-4 col-md-6 pb-1">
                     <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                         <p class="text-right">15 Products</p>
-                        <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                            <img class="img-fluid" src="templateClient/img/cat-2.jpg" alt="">
+                        <a href="shop.jsp" class="cat-img position-relative overflow-hidden mb-3">
+                            <img class="img-fluid" src="templateClient/img/accessoire.jpg" alt="">
                         </a>
-                        <h5 class="font-weight-semi-bold m-0">Women's dresses</h5>
+                        <h5 class="font-weight-semi-bold m-0">Accessoires</h5>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 pb-1">
                     <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                         <p class="text-right">15 Products</p>
-                        <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                            <img class="img-fluid" src="templateClient/img/cat-3.jpg" alt="">
+                        <a href="shop.jsp" class="cat-img position-relative overflow-hidden mb-3">
+                            <img class="img-fluid" src="templateClient/img/chaussures.jpg" alt="">
                         </a>
-                        <h5 class="font-weight-semi-bold m-0">Baby's dresses</h5>
+                        <h5 class="font-weight-semi-bold m-0">Chaussures</h5>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 pb-1">

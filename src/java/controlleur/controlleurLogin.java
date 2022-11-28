@@ -8,6 +8,9 @@ package controlleur;
 import entities.Admin;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -80,7 +83,7 @@ public class controlleurLogin extends HttpServlet {
  private void authenticate(HttpServletRequest request, HttpServletResponse response)
     throws Exception {
         String email = request.getParameter("email");
-        String password = request.getParameter("password");
+        String password = MD5(request.getParameter("password"));
 
         if (loginDao.validate(email, password)== true) {
             RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
@@ -106,4 +109,15 @@ public class controlleurLogin extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+      public static String MD5(String s) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            BigInteger bi = new BigInteger(1, md.digest(s.getBytes()));
+            return bi.toString(16);
+        } catch (NoSuchAlgorithmException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+    }
+//Source : www.exelib.net
 }

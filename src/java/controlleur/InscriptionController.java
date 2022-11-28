@@ -9,6 +9,9 @@ import entities.Admin;
 import entities.Client;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -40,7 +43,7 @@ public class InscriptionController extends HttpServlet {
         String telephone = request.getParameter("telephone");
         String addresse = request.getParameter("addresse");
         String email = request.getParameter("email");
-        String password = request.getParameter("passowrd");
+        String password = MD5(request.getParameter("passowrd"));
         cs.create(new Client(nom, prenom, telephone, addresse, email, password));
         response.sendRedirect("indexClient.jsp");
     }
@@ -83,5 +86,16 @@ public class InscriptionController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+  public static String MD5(String s) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            BigInteger bi = new BigInteger(1, md.digest(s.getBytes()));
+            return bi.toString(16);
+        } catch (NoSuchAlgorithmException ex) {
 
+            ex.printStackTrace();
+            return null;
+        }
+    }
+//Source : www.exelib.net
 }

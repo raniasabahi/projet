@@ -10,17 +10,23 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 /**
  *
  * @author Lachgar
  */
 @Entity
+@NamedQueries ( {
+       @NamedQuery(name = "findByLigneCommandePK", query = "select l from LigneCommande l where l.commandePK = :lck"),
+       @NamedQuery(name = "findLigneCommandeByCommande", query = "select l from LigneCommande l where l.commande = :c") 
+})
 public class LigneCommande implements Serializable{
     @EmbeddedId
     private LigneCommandePK commandePK;
     private double prixVente;
-    private int quantité;
+    private int quantite;
     @ManyToOne
     @JoinColumn(name = "produitId", insertable = false, updatable = false)
     private Produit produit;
@@ -31,6 +37,20 @@ public class LigneCommande implements Serializable{
     public LigneCommande() {
     }
 
+    public LigneCommande(int quantite, Produit produit, Commande commande) {
+        this.quantite = quantite;
+        this.produit = produit;
+        this.commande = commande;
+    }
+
+    public LigneCommande(LigneCommandePK commandePK, double prixVente, int quantite) {
+        this.commandePK = commandePK;
+        this.prixVente = prixVente;
+        this.quantite = quantite;
+      
+    }
+    
+
     public LigneCommandePK getCommandePK() {
         return commandePK;
     }
@@ -40,19 +60,19 @@ public class LigneCommande implements Serializable{
     }
 
     public double getPrixVente() {
-        return produit.getPrix()*getQuantité();
+        return produit.getPrix()*getQuantite();
     }
 
     public void setPrixVente(double prixVente) {
         this.prixVente = prixVente;
     }
 
-    public int getQuantité() {
-        return quantité;
+    public int getQuantite() {
+        return quantite;
     }
 
-    public void setQuantité(int quantité) {
-        this.quantité = quantité;
+    public void setQuantite(int quantite) {
+        this.quantite = quantite;
     }
 
     public Produit getProduit() {

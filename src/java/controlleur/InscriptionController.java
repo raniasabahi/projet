@@ -39,7 +39,7 @@ public class InscriptionController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         ClientService cs = new ClientService();
-       
+       //AdminService as = new AdminService();
         String nom = request.getParameter("nom");
         String prenom = request.getParameter("prenom");
         String telephone = request.getParameter("telephone");
@@ -47,7 +47,7 @@ public class InscriptionController extends HttpServlet {
         String email = request.getParameter("email");
         String password = MD5(request.getParameter("passowrd"));
         cs.create(new Client(nom, prenom, telephone, addresse, email, password));
-       
+        //as.create(new Admin(nom,email,password));
         response.sendRedirect("indexClient.jsp");
     }
 

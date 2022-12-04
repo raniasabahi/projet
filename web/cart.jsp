@@ -4,6 +4,11 @@
     Author     : RANIA
 --%>
 
+<%@page import="service.LigneService"%>
+<%@page import="service.CommandeService"%>
+<%@page import="entities.LigneCommande"%>
+<%@page import="entities.Commande"%>
+<%@page import="net.sf.ehcache.transaction.xa.commands.Command"%>
 <%@page import="entities.LignePanier"%>
 <%@page import="entities.Panier"%>
 <%@page import="entities.Produit"%>
@@ -236,12 +241,14 @@
 
     <!-- Cart Start -->
      <%
-                                    if(session.getAttribute("panier")==null){
-                                        %>
-                                        <h2> Votre panier est encore vide </h2>
-                                        <%
-                                    }else{
-                           Panier panier =(Panier) session.getAttribute("panier");       
+                                    CommandeService css=new CommandeService();
+                                    /*if(session.getAttribute("commande")==null){*/
+                                        
+                                       
+                                       
+                                    /*}else{
+                          Commande commande =(Commande) session.getAttribute("commande");*/ 
+                          
                                     %>
     <div class="container-fluid pt-5">
         <div class="row px-xl-5">
@@ -258,9 +265,10 @@
                     </thead>
                     <tbody class="align-middle">
                         <%
-                        for(LignePanier lp : panier.getItems()){
-                            
-                        Produit p = lp.getProduit();
+                        LigneService ls = new LigneService();
+                           ProduitService ps = new ProduitService();
+                           for (LigneCommande l : ls.findAll()){
+                        Produit p = l.getProduit();
                         %>
                         <tr>
                             <td class="align-middle"><img src="img/product-1.jpg" alt="" style="width: 50px;"><%= p.getNom()%></td>
@@ -268,11 +276,11 @@
                             <td class="align-middle">
                                 <div class="input-group quantity mx-auto" style="width: 100px;">
                                     <div class="input-group-btn">
-                                        <a class="btn btn-sm btn-primary btn-minus" href="gestionPanier?action=augqte&id=<%=p.getId()%>">
+                                        <a class="btn btn-sm btn-primary btn-minus" href="gestionPanier?action=dimqte&id=<%=p.getId()%>">
                                         <i class="fa fa-minus"></i>
                                         </a>
                                     </div>
-                                    <input type="text" name="qte" class="form-control form-control-sm bg-secondary text-center" value="<%=lp.getQte()%>">
+                                    <input type="text" name="qte" class="form-control form-control-sm bg-secondary text-center" value="<%=l.getQuantite()%>">
                                     <div class="input-group-btn">
                                         <a class="btn btn-sm btn-primary btn-plus" href="gestionPanier?action=augqte&id=<%=p.getId()%>">
                                             <i class="fa fa-plus"></i>
@@ -280,10 +288,10 @@
                                     </div>
                                 </div>
                             </td>
-                            <td class="align-middle"><%=p.getPrix()*lp.getQte()%> Dh</td>
+                            <td class="align-middle"><%=p.getPrix()*l.getQuantite()%> Dh</td>
                             <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
                         </tr>
-                        <%}%>
+                       
                     </tbody>
                 </table>
             </div>
@@ -303,7 +311,7 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between mb-3 pt-1">
                             <h6 class="font-weight-medium">Sous-total :</h6>
-                            <h6 class="font-weight-medium"><%=panier.total()%> Dh</h6>
+                            <h6 class="font-weight-medium"><%=css.total()%> Dh</h6>
                         </div>
                         <!--<div class="d-flex justify-content-between">
                             <h6 class="font-weight-medium">Shipping</h6>
@@ -313,7 +321,7 @@
                     <div class="card-footer border-secondary bg-transparent">
                         <div class="d-flex justify-content-between mt-2">
                             <h5 class="font-weight-bold">Total</h5>
-                            <h5 class="font-weight-bold"><%=panier.total()%> Dh</h5>
+                            <h5 class="font-weight-bold"><%=css.total()%> Dh</h5>
                         </div>
                         <button class="btn btn-block btn-primary my-3 py-3">Proceed To Checkout</button>
                     </div>

@@ -421,7 +421,7 @@
                                                     <tr>
                                                         <td class="py-1">
                                                            
-                                                            <img src="<%= p.getImage()%>" alt="image"/>
+                                                            <img src="../../../templateClient/img/<%= p.getImage()%>" alt="image"/>
                                                         </td>
                                                         <td>
                                                             <%= p.getNom()%> 

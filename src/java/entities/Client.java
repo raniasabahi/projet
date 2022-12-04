@@ -10,6 +10,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 /**
@@ -17,6 +18,7 @@ import javax.persistence.OneToMany;
  * @author Rania
  */
 @Entity
+@NamedQuery(name = "findByEmail", query = "select c from Client c where c.email = :email ")
 public class Client extends User implements Serializable {
 
     private String nom, prenom, telephone;

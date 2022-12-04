@@ -7,6 +7,7 @@ package service;
 
 import dao.IDao;
 import entities.Client;
+import entities.Produit;
 import entities.User;
 import java.util.List;
 import org.hibernate.HibernateException;
@@ -148,4 +149,40 @@ public class ClientService implements IDao<Client> {
         }
         return nbr;
     }
+    public Client findByEmail(String email) {
+        Client client = null;
+        Session session = null;
+        Transaction tx = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            tx = session.beginTransaction();
+            client = (Client) session.getNamedQuery("findByEmail").setParameter("email", email).uniqueResult();
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+        } finally {
+            session.close();
+        }
+        return client;
+    }
+    public List<Produit> listAll() {
+         List<Produit> produits = null;
+         Session session = null;
+         Transaction tx = null;
+         try {
+             session = HibernateUtil.getSessionFactory().openSession();
+             tx = session.beginTransaction();
+             produits = session.getNamedQuery("find").list();
+             tx.commit();
+         } catch (HibernateException e) {
+             if (tx != null) {
+                 tx.rollback();
+             }
+         } finally {
+             session.close();
+         }
+         return produits;
+}
 }

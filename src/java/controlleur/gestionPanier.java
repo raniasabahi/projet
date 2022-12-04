@@ -5,15 +5,27 @@
  */
 package controlleur;
 
+import entities.Client;
+import entities.Commande;
+import entities.Facture;
+import entities.LigneCommande;
+import entities.LigneCommandePK;
 import entities.Panier;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import service.ClientService;
+import service.CommandeService;
+import service.FactureService;
+import service.LigneService;
+import service.ProduitService;
 
 /**
  *
@@ -50,34 +62,54 @@ public class gestionPanier extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        String eid = (String)session.getAttribute("email");
         String action = request.getParameter("action");
-        int id = Integer.parseInt(request.getParameter("id"));
-        
-        Panier panier =null;
-        if(request.getSession().getAttribute("panier")!= null){
-            panier = (Panier)request.getSession().getAttribute("panier");
-        }else{
-            panier = new Panier();
+       // if (eid == null) {
+            // response.setContentType("application/json");
+             //Gson gson = new Gson();
+             //response.getWriter().write(gson.toJson(-1));
+        //}
+       // else {
+        if("ajouter".equals(action)){
+            CommandeService cs = new CommandeService();
+            ClientService us = new ClientService();
+            LigneService ls = new LigneService();
+            ProduitService ps = new ProduitService();
+            FactureService fs = new FactureService();
+            Client tmp = (Client) us.findByEmail(eid);
+            Commande panier = cs.getPanier();
+            if(panier==null){
+                fs.create(new Facture(new Date(),0.0));
+                Facture facture = fs.findById(1);
+                panier = new Commande(new Date(),tmp, facture);
+                cs.create(panier);
+                
+            }
+            int commandeid = panier.getId();
+            int idProduit = Integer.parseInt(request.getParameter("id"));
+            int nb = Integer.parseInt(request.getParameter("qte"));
+            
+            // ID de la commande en cours (a ajouter dans la couche service)
+            
+            LigneCommandePK lcpk = new LigneCommandePK(idProduit, commandeid);
+            LigneCommande lctmp = ls.getByPK(lcpk);
+            if(lctmp==null){
+                ls.create(new LigneCommande(lcpk, (ps.findById(idProduit)).getPrix() ,nb ));
+            }
+            if(lctmp!=null) {
+              //
+                lctmp.setQuantite(lctmp.getQuantite()+nb);
+                lctmp.setPrixVente((ps.findById(idProduit)).getPrix());
+                
+                ls.update(lctmp);
+            }
+            
+          
+            RequestDispatcher rd = request.getRequestDispatcher("cart.jsp");
+            rd.forward(request,response);
         }
-         if (action.equals("ajouter")){
-             int qte = Integer.parseInt(request.getParameter("qte"));
-             panier.addItem(id, qte);
-         }   
-       if (action.equals("augqte")){
-           panier.augmenterQte(id);
-           
-       }
-       if (action.equals("dimqte")){
-           panier.diminuerQte(id);
-           
-       }
         
-        
-        
-        request.getSession().setAttribute("panier",panier);
-        
-        RequestDispatcher dispatcher =request.getRequestDispatcher("cart.jsp");
-        dispatcher.forward(request, response);
     }
 
     /**

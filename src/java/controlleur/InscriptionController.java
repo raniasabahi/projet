@@ -100,6 +100,4 @@ public class InscriptionController extends HttpServlet {
             ex.printStackTrace();
             return null;
         }
-    }
-//Source : www.exelib.net
-}
+  }}

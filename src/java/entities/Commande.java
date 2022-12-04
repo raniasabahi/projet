@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -20,6 +21,7 @@ import javax.persistence.TemporalType;
  * @author Lachgar
  */
 @Entity
+@NamedQuery(name = "getPanier", query = "select c from Commande c where c.status = 'en cours'")
 public class Commande implements Serializable{
     
     @Id
@@ -31,7 +33,7 @@ public class Commande implements Serializable{
     private Client client;
     @ManyToOne
     private Facture facture;
-    private String etat;
+    private String status;
 
     public Commande() {
     }
@@ -42,11 +44,11 @@ public class Commande implements Serializable{
         this.facture = facture;
     }
 
-    public Commande(Date date, Client client, Facture facture, String etat) {
+    public Commande(Date date, Client client, Facture facture, String status) {
         this.date = date;
         this.client = client;
         this.facture = facture;
-        this.etat = etat;
+        this.status = status;
     }
  
     public int getId() {
@@ -81,14 +83,14 @@ public class Commande implements Serializable{
         this.facture = facture;
     }
 
-    public String getEtat() {
-        return etat;
+    public String getStatus() {
+        return status;
+    }
+    
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public void setEtat(String etat) {
-        this.etat = etat;
-    }
-    
-    
-    
+ 
+
 }

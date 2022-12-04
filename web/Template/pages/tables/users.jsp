@@ -366,10 +366,10 @@
                 </div>
               </div>
             </div>
-                   <div class="main-panel">
+           <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
-              <div class="col-lg-12 grid-margin stretch-card">
+             <!-- <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Table de commande</h4>
@@ -425,7 +425,7 @@
                             <td><a href="../../../DeleteUserControlleur?id=<%=e.getId()%>">Cancel</a></td>
                         </tr>
                          <%}%>
-                  </tbody>
+                  </tbody> 
                    
                     </table>
                   </div>
@@ -768,6 +768,7 @@
                 </div>
               </div>
             </div>
+                  
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">

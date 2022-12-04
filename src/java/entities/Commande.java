@@ -31,6 +31,7 @@ public class Commande implements Serializable{
     private Client client;
     @ManyToOne
     private Facture facture;
+    private String etat;
 
     public Commande() {
     }
@@ -39,6 +40,13 @@ public class Commande implements Serializable{
         this.date = date;
         this.client = client;
         this.facture = facture;
+    }
+
+    public Commande(Date date, Client client, Facture facture, String etat) {
+        this.date = date;
+        this.client = client;
+        this.facture = facture;
+        this.etat = etat;
     }
  
     public int getId() {
@@ -71,6 +79,14 @@ public class Commande implements Serializable{
 
     public void setFacture(Facture facture) {
         this.facture = facture;
+    }
+
+    public String getEtat() {
+        return etat;
+    }
+
+    public void setEtat(String etat) {
+        this.etat = etat;
     }
     
     

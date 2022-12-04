@@ -397,6 +397,9 @@
                           Facture
                           </th>
                           <th>
+                              Etat
+                          </th>
+                          <th>
                          Supprimer
                           </th>
                         </tr>
@@ -418,7 +421,10 @@
                            <%= e.getDate()%>
                           </td>
                           <td>
-                             
+                             0
+                          </td>
+                          <td>
+                              <%= e.getEtat() %>
                           </td>
                           <td>0
                           </td>

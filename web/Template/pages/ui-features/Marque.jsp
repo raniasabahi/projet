@@ -311,7 +311,6 @@
                                         <h4 class="card-title">Ajout d'une marques</h4>
                                         <form method="GET" action="../../../MarqueCotrolleur" class="forms-sample">
                                             <div class="form-group">
-                                                <label for="exampleInputUsername1">nom</label>
                                                 <input type="text" name="nom" class="form-control" id="exampleInputUsername1" placeholder="nom">
                                             </div>
                                             <button type="submit" class="btn btn-primary mr-2">Submit</button>
@@ -327,10 +326,7 @@
                                           <form method="GET" action="../../../DeleteMarqueControlleur" class="forms-sample">
                                       
                                         <table class="table table-bordered">
-                                                 <%
-                                                MarqueService cs = new MarqueService();
-                                                for (Marque c : cs.findAll()) {
-                                            %>
+                                               
                                                 <thead>
                                                     <tr>
                                                         <th>Nom</th>
@@ -338,6 +334,10 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                      <%
+                                                MarqueService cs = new MarqueService();
+                                                for (Marque c : cs.findAll()) {
+                                            %>
                                                     <tr>
                                                         <td><%= c.getNom()%></td>
                                                  

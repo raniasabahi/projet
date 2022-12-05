@@ -37,35 +37,35 @@
                 <img src="../../images/nr1.png" alt="logo">
               </div>
               <h4>Bienvenue sur Fashion NR</h4>
-              <h6 class="font-weight-light">Connectez-vous pour continuer.</h6>
+              <h6 class="font-weight-light">Veillez entrez votre email</h6>
               <form method="POST" action="../../../controlleurLogin" class="pt-3">
                 <div class="form-group">
                     <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="email">
                 </div>
-                <div class="form-group">
+                <!--<div class="form-group">
                   <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
-                </div>
+                </div>-->
                 <div class="mt-3">
-                      <input type="submit" value="SIGN IN" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" />
+                    <a href="../../../forgotPassword.jsp" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" /> Send me code of verification </a>
                 <!-- <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../../index.jsp">SIGN IN</a>
               -->  </div>
                 <div class="my-2 d-flex justify-content-between align-items-center">
-                  <div class="form-check">
+                  <!--<div class="form-check">
                     <label class="form-check-label text-muted">
                       <input type="checkbox" class="form-check-input">
                       Keep me signed in
                     </label>
-                  </div>
-                  <a href="verification.jsp" class="btn auth-link text-black">Forgot password?</a>
+                  </div>-->
+                 <!-- <a href="verification.jsp" class="btn auth-link text-black">Forgot password?</a>-->
                 </div>
                 <!--<div class="mb-2">
                   <button type="button" class="btn btn-block btn-facebook auth-form-btn">
                     <i class="ti-facebook mr-2"></i>Connect using facebook
                   </button>
                 </div>-->
-                <div class="text-center mt-4 font-weight-light">
+               <!-- <div class="text-center mt-4 font-weight-light">
                   Don't have an account? <a href="register.html" class="text-primary">Create</a>
-                </div>
+                </div>-->
               </form>
             </div>
           </div>

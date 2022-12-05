@@ -139,8 +139,7 @@
                                             %>
 
                                             <ul>
-                                                <li><%= g.getNom()%></li>         
-                                            </ul>
+ <li><a  class= "btn "   href="shop.jsp" > <%= g.getNom()%> </button> </a></li>                                            </ul>
 
                                             <%
                                                 }

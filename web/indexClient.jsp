@@ -130,22 +130,24 @@
                                             for (Categorie c : cs.findAll()) {
                                                 
                                         %>
+                                         
                                         <ul>
+                                         
                                             <%if (c.getCategorie() == null) {%>
                                             <li><%= c.getNom()%></li>
                                             
                                             <%
                                             for(Categorie g : cs.findCateg(c)){
                                             %>
-
+                                     
                                             <ul>
-                                                <li><%= g.getNom()%></li>         
-                                            </ul>
-
+                                                
+                                         <li><a  class= "btn "   href="shop.jsp" > <%= g.getNom()%> </button> </a></li>                                            </ul>
+                                           
                                             <%
                                                 }
                                             %>
-                                            
+                                          
                                             <%}%>
                                         </ul>
                                         <%
@@ -347,7 +349,7 @@
         <!-- Categories End -->
 
 
-        <!-- Offer Start -->
+        <!-- Offer Start-->
         <div class="container-fluid offer pt-5">
             <div class="row px-xl-5">
                 <div class="col-md-6 pb-4">

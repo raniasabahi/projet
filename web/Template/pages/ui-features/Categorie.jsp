@@ -393,7 +393,8 @@
                                                      
                                                         <%}%>
                                                        <!-- <td><input type="reset" id="reset" value="reset" name="reset" class="btn btn-warning" /></td>-->
-                                                      <td><a href="../../../DeleteCategorieControlleur?id=<%=c.getId()%>">Cancel</a> </td>
+                                                      <td><a  class= "btn btn-danger " onclick="return confirm('Etes vous sur que vous voulez le supprimer ?')"  href="../../../DeleteCategorieControlleur?id=<%=c.getId()%>"> Cancel </button> </a></td>
+                                                      
                                                       <td><a href="../../../UpdateCategorieControlleur?id=<%=c.getId()%>">Edit</a> </td>
                                                       </tr>
                                                    

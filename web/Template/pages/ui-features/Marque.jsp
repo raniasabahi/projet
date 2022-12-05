@@ -52,7 +52,7 @@
                             </div>
                         </li>
                     </ul>
-                    <ul class="navbar-nav navbar-nav-right">
+                   <!--<ul class="navbar-nav navbar-nav-right">
                         <li class="nav-item dropdown">
                             <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
                                 <i class="icon-bell mx-0"></i>
@@ -105,7 +105,7 @@
                            <!-- <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
                                 <img src="../../images/faces/face28.jpg" alt="profile"/>
                             </a>-->
-                            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                          <!--  <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
                                 <a class="dropdown-item">
                                     <i class="ti-settings text-primary"></i>
                                     Settings
@@ -121,7 +121,7 @@
                                 <i class="icon-ellipsis"></i>
                             </a>
                         </li>
-                    </ul>
+                    </ul>-->
                     <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
                         <span class="icon-menu"></span>
                     </button>
@@ -314,7 +314,7 @@
                                                 <input type="text" name="nom" class="form-control" id="exampleInputUsername1" placeholder="nom">
                                             </div>
                                             <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                            <button class="btn btn-light">Cancel</button>
+                                            <a href="Marque.jsp" class="btn btn-light">Cancel</button></a>
                                         </form>
                                     </div>
                                 </div>
@@ -358,7 +358,7 @@
                                 <div class="col-lg-12 grid-margin">
 
                                     <div class="card">
-                                        <div class="card-body">
+                                       <!-- <div class="card-body">
                                             <h4 class="card-title">Dropdown menu</h4>
 
                                             <div class="row">
@@ -879,16 +879,16 @@
                                 </div>
                             </div>
                         </div>
-                    
+                    -->
 
                     <!-- content-wrapper ends -->
                     <!-- partial:../../partials/_footer.html -->
-                    <footer class="footer">
+                  <!--  <footer class="footer">
                         <div class="d-sm-flex justify-content-center justify-content-sm-between">
                             <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.  Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
                             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
                         </div>
-                    </footer>
+                    </footer>-->
                     <!-- partial -->
                 </div>
                 <!-- main-panel ends -->

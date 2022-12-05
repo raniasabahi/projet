@@ -55,7 +55,7 @@
           </li>
         </ul>
         <ul class="navbar-nav navbar-nav-right">
-          <li class="nav-item dropdown">
+          <!--<li class="nav-item dropdown">
             <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
               <i class="icon-bell mx-0"></i>
               <span class="count"></span>
@@ -102,12 +102,12 @@
                 </div>
               </a>
             </div>
-          </li>
+          </li>-->
           <li class="nav-item nav-profile dropdown">
          <!--   <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
               <img src="../../images/faces/face28.jpg" alt="profile"/>
             </a>-->
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+           <!-- <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item">
                 <i class="ti-settings text-primary"></i>
                 Settings
@@ -116,7 +116,7 @@
                 <i class="ti-power-off text-primary"></i>
                 Logout
               </a>
-            </div>
+            </div>-->
           </li>
           <li class="nav-item nav-settings d-none d-lg-flex">
             <a class="nav-link" href="#">
@@ -152,25 +152,25 @@
       </div>
       <div id="right-sidebar" class="settings-panel">
         <i class="settings-close ti-close"></i>
-        <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
+       <!-- <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
           <li class="nav-item">
             <a class="nav-link active" id="todo-tab" data-toggle="tab" href="#todo-section" role="tab" aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" id="chats-tab" data-toggle="tab" href="#chats-section" role="tab" aria-controls="chats-section">CHATS</a>
           </li>
-        </ul>
+        </ul>-->
         <div class="tab-content" id="setting-content">
           <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
-            <div class="add-items d-flex px-3 mb-0">
+           <!-- <div class="add-items d-flex px-3 mb-0">
               <form class="form w-100">
                 <div class="form-group d-flex">
                   <input type="text" class="form-control todo-list-input" placeholder="Add To-do">
                   <button type="submit" class="add btn btn-primary todo-list-add-btn" id="add-task">Add</button>
                 </div>
               </form>
-            </div>
-            <div class="list-wrapper px-3">
+            </div>-->
+            <!--<div class="list-wrapper px-3">
               <ul class="d-flex flex-column-reverse todo-list">
                 <li>
                   <div class="form-check">
@@ -218,23 +218,23 @@
                   <i class="remove ti-close"></i>
                 </li>
               </ul>
-            </div>
-            <h4 class="px-3 text-muted mt-5 font-weight-light mb-0">Events</h4>
+            </div>-->
+           <!-- <h4 class="px-3 text-muted mt-5 font-weight-light mb-0">Events</h4>-->
             <div class="events pt-4 px-3">
               <div class="wrapper d-flex mb-2">
-                <i class="ti-control-record text-primary mr-2"></i>
-                <span>Feb 11 2018</span>
+                <!--<i class="ti-control-record text-primary mr-2"></i>
+                <span>Feb 11 2018</span>-->
               </div>
-              <p class="mb-0 font-weight-thin text-gray">Creating component page build a js</p>
-              <p class="text-gray mb-0">The total number of sessions</p>
+              <!--<p class="mb-0 font-weight-thin text-gray">Creating component page build a js</p>
+              <p class="text-gray mb-0">The total number of sessions</p>-->
             </div>
             <div class="events pt-4 px-3">
               <div class="wrapper d-flex mb-2">
-                <i class="ti-control-record text-primary mr-2"></i>
-                <span>Feb 7 2018</span>
+                <!--<i class="ti-control-record text-primary mr-2"></i>
+                <span>Feb 7 2018</span>-->
               </div>
-              <p class="mb-0 font-weight-thin text-gray">Meeting with Alisa</p>
-              <p class="text-gray mb-0 ">Call Sarah Graves</p>
+              <!--<p class="mb-0 font-weight-thin text-gray">Meeting with Alisa</p>
+              <p class="text-gray mb-0 ">Call Sarah Graves</p>-->
             </div>
           </div>
           <!-- To do section tab ends -->
@@ -424,7 +424,7 @@
             </div>
                   
             <div class="col-lg-6 grid-margin stretch-card">
-              <div class="card">
+             <!-- <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Basic Table</h4>
                   <p class="card-description">
@@ -698,7 +698,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div>-->
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
@@ -757,7 +757,7 @@
             </div>
                   
             <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
+              <!--<div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Inverse table</h4>
                   <p class="card-description">
@@ -1007,15 +1007,15 @@
               </div>
             </div>
           </div>
-        </div>
+        </div>-->
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->
-        <footer class="footer">
+       <!-- <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
             <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.  Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
           </div>
-        </footer>
+        </footer>-->
         <!-- partial -->
       </div>
       <!-- main-panel ends -->

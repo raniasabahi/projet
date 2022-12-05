@@ -59,16 +59,16 @@
                     </div>
                 </div>
                 <div id="right-sidebar" class="settings-panel">
-                    <i class="settings-close ti-close"></i>
-                    <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
+                   <!-- <i class="settings-close ti-close"></i>-->
+                   <!-- <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="todo-tab" data-toggle="tab" href="#todo-section" role="tab" aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="chats-tab" data-toggle="tab" href="#chats-section" role="tab" aria-controls="chats-section">CHATS</a>
                         </li>
-                    </ul>
-                    <div class="tab-content" id="setting-content">
+                    </ul>-->
+                   <!-- <div class="tab-content" id="setting-content">
                         <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
                             <div class="add-items d-flex px-3 mb-0">
                                 <form class="form w-100">
@@ -146,7 +146,7 @@
                             </div>
                         </div>
                         <!-- To do section tab ends -->
-                        <div class="tab-pane fade" id="chats-section" role="tabpanel" aria-labelledby="chats-section">
+                       <!-- <div class="tab-pane fade" id="chats-section" role="tabpanel" aria-labelledby="chats-section">
                             <div class="d-flex align-items-center justify-content-between border-bottom">
                                 <p class="settings-heading border-top-0 mb-3 pl-3 pt-0 border-bottom-0 pb-0">Friends</p>
                                 <small class="settings-heading border-top-0 mb-3 pt-0 border-bottom-0 pb-0 pr-3 font-weight-normal">See All</small>
@@ -205,8 +205,8 @@
                                 </li>
                             </ul>
                         </div>
-                        <!-- chat tab ends -->
-                    </div>
+                        <!-- chat tab ends
+                    </div> -->
                 </div>
                 <!-- partial -->
                 <!-- partial:partials/_sidebar.html -->

@@ -27,10 +27,10 @@
                                 <div class="row">
                                     <div class="col-12 col-xl-8 mb-4 mb-xl-0">
                                         <h3 class="font-weight-bold">Bienvenue admin</h3>
-                                        <h6 class="font-weight-normal mb-0">Ici vous pouvez gérér votre espace admin <!--<span class="text-primary">3 unread alerts!</span>--></h6>
+                                        <h6 class="font-weight-normal mb-0">Ici vous pouvez gerer votre espace admin <!--<span class="text-primary">3 unread alerts!</span>--></h6>
                                     </div>
                                     <div class="col-12 col-xl-4">
-                                        <div class="justify-content-end d-flex">
+                                       <!--<div class="justify-content-end d-flex">
                                             <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
                                                 <button class="btn btn-sm btn-light bg-white dropdown-toggle" type="button" id="dropdownMenuDate2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                                     <i class="mdi mdi-calendar"></i> Today (10 Jan 2021)
@@ -42,7 +42,7 @@
                                                     <a class="dropdown-item" href="#">August - November</a>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>-->
                                     </div>
                                 </div>
                             </div>
@@ -111,7 +111,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6 grid-margin stretch-card">
-                                <div class="card">
+                              <!--  <div class="card">
                                     <div class="card-body">
                                         <p class="card-title">Order Details</p>
                                         <p class="font-weight-500">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
@@ -135,8 +135,8 @@
                                         </div>
                                         <canvas id="order-chart"></canvas>
                                     </div>
-                                </div>
-                            </div>
+                                </div>-->
+                          <!--  </div>
                             <div class="col-md-6 grid-margin stretch-card">
                                 <div class="card">
                                     <div class="card-body">
@@ -150,8 +150,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
+                        </div>-->
+                      <!--  <div class="row">
                             <div class="col-md-12 grid-margin stretch-card">
                                 <div class="card position-relative">
                                     <div class="card-body">
@@ -330,9 +330,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-7 grid-margin stretch-card">
+                        </div>-->
+                           <!-- <div class="col-md-7 grid-margin stretch-card">
                                 <div class="card">
                                     <div class="card-body">
                                         <p class="card-title mb-0">Top Products</p>
@@ -455,8 +454,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
+                        </div>-->
+                     <!--   <div class="row">
                             <div class="col-md-4 stretch-card grid-margin">
                                 <div class="card">
                                     <div class="card-body">
@@ -635,8 +634,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
+                        </div>-->
+                      <!--  <div class="row">
                             <div class="col-md-12 grid-margin stretch-card">
                                 <div class="card">
                                     <div class="card-body">
@@ -664,16 +663,16 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                     <!-- content-wrapper ends -->
                     <!-- partial:partials/_footer.html -->
-                    <footer class="footer">
+                    <!--<footer class="footer">
                         <div class="d-sm-flex justify-content-center justify-content-sm-between">
                             <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.  Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
                             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
                         </div>
-                    </footer>
+                    </footer>-->
                     <!-- partial -->
                 </div>
 

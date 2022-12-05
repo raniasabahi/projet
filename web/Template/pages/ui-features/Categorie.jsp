@@ -55,10 +55,10 @@
                     </ul>
                     <ul class="navbar-nav navbar-nav-right">
                         <li class="nav-item dropdown">
-                            <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+                           <!-- <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
                                 <i class="icon-bell mx-0"></i>
                                 <span class="count"></span>
-                            </a>
+                            </a>-->
                             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
                                 <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
                                 <a class="dropdown-item preview-item">
@@ -151,16 +151,16 @@
                 </div>
                 <div id="right-sidebar" class="settings-panel">
                     <i class="settings-close ti-close"></i>
-                    <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
+                   <!-- <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="todo-tab" data-toggle="tab" href="#todo-section" role="tab" aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="chats-tab" data-toggle="tab" href="#chats-section" role="tab" aria-controls="chats-section">CHATS</a>
                         </li>
-                    </ul>
+                    </ul>-->
                     <div class="tab-content" id="setting-content">
-                        <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
+                       <!-- <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
                             <div class="add-items d-flex px-3 mb-0">
                                 <form class="form w-100">
                                     <div class="form-group d-flex">
@@ -235,7 +235,7 @@
                                 <p class="mb-0 font-weight-thin text-gray">Meeting with Alisa</p>
                                 <p class="text-gray mb-0 ">Call Sarah Graves</p>
                             </div>
-                        </div>
+                        </div>-->
                         <!-- To do section tab ends -->
                         <div class="tab-pane fade" id="chats-section" role="tabpanel" aria-labelledby="chats-section">
                             <div class="d-flex align-items-center justify-content-between border-bottom">
@@ -317,7 +317,7 @@
                                                 <input type="text" name="nom" class="form-control" id="exampleInputUsername1" placeholder="nom">
                                             </div>
                                             <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                            <button class="btn btn-light">Cancel</button>
+                                            <a href="Categorie.jsp" class="btn btn-light">Cancel</button></a>
                                         </form>
                                     </div>
                                 </div>
@@ -348,7 +348,7 @@
                                                 </select>
                                             </div>
                                             <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                            <button class="btn btn-light">Cancel</button>
+                                            <a href="Categorie.jsp"class="btn btn-light">Cancel</button></a>
 
                                         </form>
                                     </div>
@@ -394,8 +394,7 @@
                                                         <%}%>
                                                        <!-- <td><input type="reset" id="reset" value="reset" name="reset" class="btn btn-warning" /></td>-->
                                                       <td><a  class= "btn btn-danger " onclick="return confirm('Etes vous sur que vous voulez le supprimer ?')"  href="../../../DeleteCategorieControlleur?id=<%=c.getId()%>"> Cancel </button> </a></td>
-                                                      
-                                                      <td><a href="../../../UpdateCategorieControlleur?id=<%=c.getId()%>">Edit</a> </td>
+                                                    <!--  <td><a href="../../../UpdateCategorieControlleur?id=<%=c.getId()%>">Edit</a> </td>-->
                                                       </tr>
                                                    
                                                     <%}%>
@@ -411,7 +410,7 @@
                             </div>
 
                             <div class="col-md-8 grid-margin stretch-card">
-                                <div class="card">
+                               <!-- <div class="card">
                                     <div class="row">
                                         <div class="col-md-7">
                                             <div class="card-body">
@@ -731,17 +730,17 @@
                                     </div>
                                 </div>
                             </div>
-                        
+                        -->
                     </div>
                     
                     <!-- content-wrapper ends -->
                     <!-- partial:../../partials/_footer.html -->
-                    <footer class="footer">
+                   <!-- <footer class="footer">
                         <div class="d-sm-flex justify-content-center justify-content-sm-between">
                             <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.  Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
                             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
                         </div>
-                    </footer>
+                    </footer>-->
                     <!-- partial -->
                 </div>
                 <!-- main-panel ends -->

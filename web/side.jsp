@@ -48,7 +48,7 @@
                             </div>
                         </li>
                         
-                        <li class="nav-item">
+                       <!-- <li class="nav-item">
                             <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
                                 <i class="icon-columns menu-icon"></i>
                                 <span class="menu-title">Form elements</span>
@@ -60,8 +60,8 @@
                                 </ul>
                             </div>
                         </li>
-                        
-                        <li class="nav-item">
+                        -->
+                        <!--<li class="nav-item">
                             <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
                                 <i class="icon-bar-graph menu-icon"></i>
                                 <span class="menu-title">Charts</span>
@@ -72,10 +72,10 @@
                                     <li class="nav-item"> <a class="nav-link" href="Template/pages/charts/chartjs.html">ChartJs</a></li>
                                 </ul>
                             </div>
-                        </li>
+                        </li>-->
                         
                         
-                        <li class="nav-item">
+                       <!-- <li class="nav-item">
                             <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
                                 <i class="icon-contract menu-icon"></i>
                                 <span class="menu-title">Icons</span>
@@ -87,7 +87,7 @@
                                 </ul>
                             </div>
                         </li>
-                        
+                        -->
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
                                 <i class="icon-head menu-icon"></i>

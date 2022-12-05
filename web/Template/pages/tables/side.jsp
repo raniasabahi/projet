@@ -17,7 +17,7 @@
           <li class="nav-item">
             <a class="nav-link" href="../../../index.jsp">
               <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
+              <span class="menu-title">Tableau de bord</span>
             </a>
           </li>
           <li class="nav-item">
@@ -28,7 +28,7 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/Cateorie.jsp">Catégories</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/Categorie.jsp">Catégories</a></li>
                 <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/Marque.jsp">Marque</a></li>
                 <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/Produits.jsp">Produits</a></li>
               </ul>
@@ -48,7 +48,7 @@
             </div>
           </li>
           
-          <li class="nav-item">
+          <!--<li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
               <i class="icon-columns menu-icon"></i>
               <span class="menu-title">Form elements</span>
@@ -59,9 +59,9 @@
                 <li class="nav-item"><a class="nav-link" href="../../pages/forms/basic_elements.html">Basic Elements</a></li>
               </ul>
             </div>
-          </li>
+          </li>-->
          
-          <li class="nav-item">
+          <!--<li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
               <i class="icon-bar-graph menu-icon"></i>
               <span class="menu-title">Charts</span>
@@ -85,7 +85,7 @@
                 <li class="nav-item"> <a class="nav-link" href="../../pages/icons/mdi.html">Mdi icons</a></li>
               </ul>
             </div>
-          </li>
+          </li>-->
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
               <i class="icon-head menu-icon"></i>

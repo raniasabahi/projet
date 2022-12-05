@@ -61,7 +61,7 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav navbar-nav-right">
-                        <li class="nav-item dropdown">
+                       <!-- <li class="nav-item dropdown">
                             <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
                                 <i class="icon-bell mx-0"></i>
                                 <span class="count"></span>
@@ -108,11 +108,11 @@
                                     </div>
                                 </a>
                             </div>
-                        </li>
-                        <li class="nav-item nav-profile dropdown">
+                        </li>-->
+                      <!--  <li class="nav-item nav-profile dropdown">
                            <!-- <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
                                 <img src="../../images/faces/face28.jpg" alt="profile"/>
-                            </a>-->
+                            </a>
                             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
                                 <a class="dropdown-item">
                                     <i class="ti-settings text-primary"></i>
@@ -123,12 +123,12 @@
                                     Logout
                                 </a>
                             </div>
-                        </li>
-                        <li class="nav-item nav-settings d-none d-lg-flex">
+                        </li>-->
+                        <!--<li class="nav-item nav-settings d-none d-lg-flex">
                             <a class="nav-link" href="#">
                                 <i class="icon-ellipsis"></i>
                             </a>
-                        </li>
+                        </li>-->
                     </ul>
                     <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
                         <span class="icon-menu"></span>
@@ -438,7 +438,7 @@
                                                         <td>
                                                             <%= p.getMarque().getNom()%>
                                                         </td>
-                                                       <td><a href="../../../DeleteProduitControlleur?id=<%=p.getId()%>"> Supprimer</a></td>
+                                                        <td><a  class= "btn btn-danger " onclick="return confirm('Etes vous sur que vous voulez le supprimer ?')"  href="../../../DeleteProduitControlleur?id=<%=p.getId()%> "> Supprimer </button> </a></td>
                                                     </tr>
                                                     <%}%>
 
@@ -452,7 +452,7 @@
 
 
 
-                            <div class="col-md-6 grid-margin stretch-card">
+                          <!--  <div class="col-md-6 grid-margin stretch-card">
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">Headings</h4>
@@ -903,14 +903,14 @@
                             </div>
                         </div>
                     </div>
-                    <!-- content-wrapper ends -->
+                    <!-- content-wrapper ends 
                     <!-- partial:../../partials/_footer.html -->
-                    <footer class="footer">
+                   <!-- <footer class="footer">
                         <div class="d-sm-flex justify-content-center justify-content-sm-between">
                             <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.  Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
                             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
                         </div>
-                    </footer>
+                    </footer>-->
                     <!-- partial -->
                 </div>
                 <!-- main-panel ends -->

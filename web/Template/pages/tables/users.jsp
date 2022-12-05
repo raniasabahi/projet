@@ -366,14 +366,10 @@
                 </div>
               </div>
             </div>
-           <div class="main-panel">
-        <div class="content-wrapper">
-          <div class="row">
-             <!-- <div class="col-lg-12 grid-margin stretch-card">
+                              <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Table de commande</h4>
-                   <form method="GET" action="../../../DeleteUserControlleur" class="forms-sample">
+                  <h4 class="card-title">Table de commandes   </h4>
                   <!--<p class="card-description">
                     Add class <code>.table-bordered</code>
                   </p>-->
@@ -382,63 +378,51 @@
                       <thead>
                         <tr>
                           <th>
-                          #
+                            nom complet
                           </th>
                           <th>
-                           Client
+                            Date
                           </th>
                           <th>
-                           DateCommande
+                            Status
                           </th>
                           <th>
-                            PrixTotale
-                          </th>
-                          <th>
-                          Facture
-                          </th>
-                          <th>
-                              Etat
-                          </th>
-                          <th>
-                         Supprimer
+                           Facture
                           </th>
                         </tr>
                       </thead>
-                       
+                     
                       <tbody>
                          <%
-                             CommandeService cm= new CommandeService();
-                              for (Commande e: cm.findAll()){
-                         %> 
+                              CommandeService cv=new CommandeService();
+                              for(Commande e : cv.findAll()){
+                              %>
                         <tr> 
+                         
                           <td>
-                              <%= e.getId()%>
-                          </td>
-                          <td>
-                            <%= e.getClient().getNom()%> <%= e.getClient().getPrenom()%>
+                              <%= e.getClient()%>
                           </td>
                            <td>
                            <%= e.getDate()%>
                           </td>
+                        
                           <td>
-                             0
+                          <%= e.getStatus()%>
                           </td>
                           <td>
-                              <%= e.getEtat() %>
+                            <%= e.getFacture()%> 
+                             
                           </td>
-                          <td>0
-                          </td>
-                            <td><a href="../../../DeleteUserControlleur?id=<%=e.getId()%>">Cancel</a></td>
                         </tr>
-                         <%}%>
-                  </tbody> 
+                     <%}%>   
+                  </tbody>
                    
                     </table>
                   </div>
-                   </form>
                 </div>
               </div>
             </div>
+                  
             <div class="col-lg-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
@@ -718,7 +702,7 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Table de clients</h4>
+                  <h4 class="card-title">Table de commandes   </h4>
                   <!--<p class="card-description">
                     Add class <code>.table-bordered</code>
                   </p>-->
@@ -727,48 +711,45 @@
                       <thead>
                         <tr>
                           <th>
-                          #
-                          </th>
-                          <th>
                             nom complet
                           </th>
                           <th>
-                            Telephone
+                            Date
                           </th>
                           <th>
-                            Adress
+                            Status
                           </th>
                           <th>
-                            Email
+                           Facture
                           </th>
                         </tr>
                       </thead>
-                       
+                     
                       <tbody>
                          <%
-                              ClientService cs= new ClientService();
-                              for (Client e: cs.findAll()){
-                         %> 
+                              CommandeService cr=new CommandeService();
+                              for(Commande e : cr.findAll()){
+                              %>
                         <tr> 
+                         
                           <td>
-                              <%= e.getId()%>
-                          </td>
-                          <td>
-                            <%= e.getNom()%> <%= e.getPrenom()%>
+                              <%= e.getClient() %>
                           </td>
                            <td>
-                           <%= e.getTelephone()%>
+                           <%= e.getDate()  %>
+                          </td>
+                        
+                          <td>
+                          <%= e.getStatus()%>
                           </td>
                           <td>
-                           <%= e.getAddresse()%>
-                          </td>
-                          <td>
-                           <%= e.getEmail()%>
+                            <%= e.getFacture() %> 
+                             
                           </td>
                         </tr>
-                         <%}%>
+                        
                   </tbody>
-                   
+                   <%}%>
                     </table>
                   </div>
                 </div>

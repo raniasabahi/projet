@@ -68,6 +68,11 @@ public class Client extends User implements Serializable {
     public void setAddresse(String addresse) {
         this.addresse = addresse;
     }
+
+    @Override
+    public String toString() {
+        return  this.nom + " " + this.prenom ;
+    }
     
     
 }

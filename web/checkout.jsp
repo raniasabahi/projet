@@ -411,7 +411,7 @@
                         </div>
                     </div>
                     <div class="card-footer border-secondary bg-transparent">
-                        <button class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Place Order</button>
+                        <a  class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3" href="shop.jsp" >Place Order</button></a>
                     </div>
                 </div>
             </div>

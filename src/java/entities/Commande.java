@@ -44,10 +44,9 @@ public class Commande implements Serializable{
         this.facture = facture;
     }
 
-    public Commande(Date date, Client client, Facture facture, String status) {
+    public Commande(Date date, Client client,  String status) {
         this.date = date;
         this.client = client;
-        this.facture = facture;
         this.status = status;
     }
  
@@ -86,11 +85,17 @@ public class Commande implements Serializable{
     public String getStatus() {
         return status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
 
+    @Override
+    public String toString() {
+        return "Commande{" + "id=" + id + ", date=" + date + ", client=" + client + ", facture=" + facture + ", status=" + status + '}';
+    }
+
+    
  
 
 }

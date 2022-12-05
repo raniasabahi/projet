@@ -7,7 +7,10 @@ package test;
 
 
 import entities.Admin;
+import entities.Commande;
+import java.util.Date;
 import service.AdminService;
+import service.CommandeService;
 import util.HibernateUtil;
 
 /**
@@ -20,13 +23,13 @@ public class Test {
         
         //ClientService c = new ClientService();
         AdminService as = new AdminService();
-         as.create(new Admin("rania", "rania@gmail.com", "123"));
+         //as.create(new Admin("rania", "rania@gmail.com", "123"));
          //c.create(new Client("moustaghit", "nouhaila", "556678", "667889", "Nouhaila@gmail.com", "234"));
       //  CategorieService cs = new CategorieService();
        
         
         //cs.delete(cs.findById(4));
         //cs.create(new Categorie("jeans"));
-       //  cs.update(cs.findById(3));                
-    }
+       //  cs.update(cs.findById(3));        
+  }
 }
